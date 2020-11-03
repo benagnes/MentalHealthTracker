@@ -6,29 +6,42 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="108dp"
-        android:layout_marginRight="108dp"
-        android:rotation="-41"
-        android:text="Add a product"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="#D62121"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <Button
+        android:id="@+id/playMusicButton"
+        android:layout_width="389dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="244dp"
+        android:text="Play Music"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="#EFC635"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button4"
-        android:layout_width="125dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="132dp"
-        android:layout_marginLeft="132dp"
-        android:layout_marginTop="108dp"
-        android:text="Button"
+        android:id="@+id/yogaButton"
+        android:layout_width="389dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="156dp"
+        android:text="Yoga"
+        app:backgroundTint="#2196F3"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/welcomeMsg"
+        android:layout_width="388dp"
+        android:layout_height="133dp"
+        android:autoText="true"
+        android:background="#8BEA71"
+        android:clickable="false"
+        android:gravity="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.013" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
