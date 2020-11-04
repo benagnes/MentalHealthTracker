@@ -4,12 +4,8 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
 
@@ -20,29 +16,22 @@ import android.widget.TextView;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
+    private TextView welcomeMsg;
     private Button doYogaButton;
     private Button playMusicButton;
-    private TextView welcomeMsg;
+    private Button moodTrackerButton;
+    private Button breathingExButton;
+    private Button mindfulnessButton;
+    private Button webSupportArticlesButton;
+    private Button moreResourcesButton;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         // set welcome message based on time of day
         welcomeMsg = (TextView) findViewById(R.id.welcomeMsg);
@@ -78,15 +67,76 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Button that links to 'Mood Tracker' component
+        moodTrackerButton = (Button) findViewById(R.id.moodTrackerButton);
+        moodTrackerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMoodTracker();
+            }
+        });
+
+        // Button that links to 'Breathing Exercises' component
+        breathingExButton = (Button) findViewById(R.id.breathingExButton);
+        breathingExButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { openBreathingExercises();}
+        });
+
+        // Button that links to 'Mindfulness' component
+        mindfulnessButton = (Button) findViewById(R.id.mindfulnessButton);
+        mindfulnessButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { openMindfulness();}
+        });
+
+        // Button that links to 'Web Support Articles' component
+        webSupportArticlesButton = (Button) findViewById(R.id.webSupportArticlesButton);
+        webSupportArticlesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { openWebSupportArticles();}
+        });
+
+        // Button that links to 'More Resources' component
+        moreResourcesButton = (Button) findViewById(R.id.moreResourcesButton);
+        moreResourcesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { openMoreResources();}
+        });
     }
 
     public void openYogaActivity() {
-        Intent intent = new Intent(this, DoYoga.class);
+        Intent intent = new Intent(this, Yoga.class);
         startActivity(intent);
     }
 
     public void openPlayMusicActivity() {
         Intent intent = new Intent(this, PlayMusic.class);
+        startActivity(intent);
+    }
+
+    public void openMoodTracker() {
+        Intent intent = new Intent(this, MoodTracker.class);
+        startActivity(intent);
+    }
+
+    public void openBreathingExercises() {
+        Intent intent = new Intent(this, BreathingExercises.class);
+        startActivity(intent);
+    }
+
+    public void openMindfulness() {
+        Intent intent = new Intent(this, Mindfulness.class);
+        startActivity(intent);
+    }
+
+    public void openWebSupportArticles() {
+        Intent intent = new Intent(this, WebSupportArticles.class);
+        startActivity(intent);
+    }
+
+    public void openMoreResources() {
+        Intent intent = new Intent(this, MoreResources.class);
         startActivity(intent);
     }
 

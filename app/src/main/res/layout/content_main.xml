@@ -6,42 +6,75 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <Button
-        android:id="@+id/playMusicButton"
+    <LinearLayout
         android:layout_width="389dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="244dp"
-        android:text="Play Music"
-        android:textColor="#FFFFFF"
-        app:backgroundTint="#EFC635"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/yogaButton"
-        android:layout_width="389dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="156dp"
-        android:text="Yoga"
-        app:backgroundTint="#2196F3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/welcomeMsg"
-        android:layout_width="388dp"
-        android:layout_height="133dp"
-        android:autoText="true"
-        android:background="#8BEA71"
-        android:clickable="false"
-        android:gravity="center"
-        android:textSize="24sp"
+        android:layout_height="579dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.013" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/welcomeMsg"
+            android:layout_width="388dp"
+            android:layout_height="72dp"
+            android:autoText="true"
+            android:background="#8BEA71"
+            android:clickable="false"
+            android:gravity="center"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/yogaButton"
+            android:layout_width="388dp"
+            android:layout_height="72dp"
+            android:text="Yoga"
+            app:backgroundTint="#2196F3" />
+
+        <Button
+            android:id="@+id/playMusicButton"
+            android:layout_width="388dp"
+            android:layout_height="72dp"
+            android:text="Play Music"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="#EFC635"
+            app:layout_constraintTop_toBottomOf="@+id/welcomeMsg" />
+
+        <Button
+            android:id="@+id/moodTrackerButton"
+            android:layout_width="388dp"
+            android:layout_height="72dp"
+            android:text="Mood Tracker" />
+
+        <Button
+            android:id="@+id/breathingExButton"
+            android:layout_width="388dp"
+            android:layout_height="72dp"
+            android:text="Breathing Exercises"
+            app:backgroundTint="#E83A3A" />
+
+        <Button
+            android:id="@+id/mindfulnessButton"
+            android:layout_width="388dp"
+            android:layout_height="72dp"
+            android:text="Mindfulness"
+            app:backgroundTint="#00BCD4" />
+
+        <Button
+            android:id="@+id/webSupportArticlesButton"
+            android:layout_width="388dp"
+            android:layout_height="72dp"
+            android:text="Web Support Articles" />
+
+        <Button
+            android:id="@+id/moreResourcesButton"
+            android:layout_width="388dp"
+            android:layout_height="72dp"
+            android:text="More Resources"
+            app:backgroundTint="#8BC34A" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
