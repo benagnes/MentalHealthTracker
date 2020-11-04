@@ -10,12 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MentalHealthTracker">
         <activity android:name="com.example.mentalhealthtracker.Yoga"></activity>
-        <activity android:name="com.example.mentalhealthtracker.PlayMusic"></activity>
         <activity android:name="com.example.mentalhealthtracker.MoodTracker"></activity>
         <activity android:name="com.example.mentalhealthtracker.BreathingExercises"></activity>
         <activity android:name="com.example.mentalhealthtracker.Mindfulness"></activity>
         <activity android:name="com.example.mentalhealthtracker.WebSupportArticles"></activity>
         <activity android:name="com.example.mentalhealthtracker.MoreResources"></activity>
+        <activity
+            android:name="com.example.mentalhealthtracker.music.PlayMusic"
+            android:parentActivityName=".MainActivity">
+        </activity>
         <activity
             android:name="com.example.mentalhealthtracker.MainActivity"
             android:label="@string/app_name"
