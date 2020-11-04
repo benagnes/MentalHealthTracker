@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class DoYoga extends AppCompatActivity {
+public class Yoga extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
