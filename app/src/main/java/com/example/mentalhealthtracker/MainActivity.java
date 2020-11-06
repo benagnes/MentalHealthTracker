@@ -7,8 +7,6 @@ import android.os.Bundle;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.view.View;
-
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -20,7 +18,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView welcomeMsg;
     private Button doYogaButton;
     private Button playMusicButton;
     private Button moodTrackerButton;
@@ -36,75 +33,48 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // set welcome message based on time of day
-        welcomeMsg = (TextView) findViewById(R.id.welcomeMsg);
+        TextView welcomeMsg = (TextView) findViewById(R.id.welcomeMsg);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH");
         LocalDateTime currentTime = LocalDateTime.now();
         String hourofDay = currentTime.format(formatter);
         int hour = Integer.parseInt(hourofDay);
         if (hour >= 4 && hour < 12 ) {
-            welcomeMsg.setText("Good morning!");
+            welcomeMsg.setText(R.string.welcomeMessage_1);
         }
         else if (hour >= 12 && hour < 18) {
-            welcomeMsg.setText("Good afternoon!");
+            welcomeMsg.setText(R.string.welcomeMessage_2);
         }
         else {
-            welcomeMsg.setText("Good evening!");
+            welcomeMsg.setText(R.string.welcomeMessage_3);
         }
 
         // Button that links to 'Do Yoga' component
         doYogaButton = (Button) findViewById(R.id.yogaButton);
-        doYogaButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openYogaActivity();
-            }
-        });
+        doYogaButton.setOnClickListener(v -> openYogaActivity());
 
         // Button that links to 'Play Music' component
         playMusicButton = (Button) findViewById(R.id.playMusicButton);
-        playMusicButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openPlayMusicActivity();
-            }
-        });
+        playMusicButton.setOnClickListener(v -> openPlayMusicActivity());
 
         // Button that links to 'Mood Tracker' component
         moodTrackerButton = (Button) findViewById(R.id.moodTrackerButton);
-        moodTrackerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openMoodTracker();
-            }
-        });
+        moodTrackerButton.setOnClickListener(v -> openMoodTracker());
 
         // Button that links to 'Breathing Exercises' component
         breathingExButton = (Button) findViewById(R.id.breathingExButton);
-        breathingExButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { openBreathingExercises();}
-        });
+        breathingExButton.setOnClickListener(v -> openBreathingExercises());
 
         // Button that links to 'Mindfulness' component
         mindfulnessButton = (Button) findViewById(R.id.mindfulnessButton);
-        mindfulnessButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { openMindfulness();}
-        });
+        mindfulnessButton.setOnClickListener(v -> openMindfulness());
 
         // Button that links to 'Web Support Articles' component
         webSupportArticlesButton = (Button) findViewById(R.id.webSupportArticlesButton);
-        webSupportArticlesButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { openWebSupportArticles();}
-        });
+        webSupportArticlesButton.setOnClickListener(v -> openWebSupportArticles());
 
         // Button that links to 'More Resources' component
         moreResourcesButton = (Button) findViewById(R.id.moreResourcesButton);
-        moreResourcesButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { openMoreResources();}
-        });
+        moreResourcesButton.setOnClickListener(v -> openMoreResources());
     }
 
     public void openYogaActivity() {

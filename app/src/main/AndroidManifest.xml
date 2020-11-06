@@ -3,18 +3,18 @@
     package="com.example.mentalhealthtracker">
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MentalHealthTracker">
-        <activity android:name="com.example.mentalhealthtracker.Yoga"></activity>
-        <activity android:name="com.example.mentalhealthtracker.MoodTracker"></activity>
-        <activity android:name="com.example.mentalhealthtracker.BreathingExercises"></activity>
-        <activity android:name="com.example.mentalhealthtracker.Mindfulness"></activity>
-        <activity android:name="com.example.mentalhealthtracker.WebSupportArticles"></activity>
-        <activity android:name="com.example.mentalhealthtracker.MoreResources"></activity>
+        <activity android:name="com.example.mentalhealthtracker.Yoga" />
+        <activity android:name="com.example.mentalhealthtracker.MoodTracker" />
+        <activity android:name="com.example.mentalhealthtracker.BreathingExercises" />
+        <activity android:name="com.example.mentalhealthtracker.Mindfulness" />
+        <activity android:name="com.example.mentalhealthtracker.WebSupportArticles" />
+        <activity android:name="com.example.mentalhealthtracker.MoreResources" />
         <activity
             android:name="com.example.mentalhealthtracker.music.PlayMusic"
             android:parentActivityName=".MainActivity">

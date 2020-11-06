@@ -10,7 +10,7 @@
         android:id="@+id/moodTrackerPlacehold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mood Tracker Placeholder"
+        android:text="@string/moodTrackerPlaceholder"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
