@@ -1,13 +1,8 @@
 <resources>
     <string name="app_name">MentalHealthTracker</string>
     <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
 
-    <!-- Strings used for main panel button names -->
+    <!-- Strings for Home Page -->
     <string name="yoga">Yoga</string>
     <string name="playmusic">Play Music</string>
     <string name="moodtracker">Mood Tracker</string>
@@ -18,6 +13,31 @@
 
     <!-- Strings used in the PlayMusic activity -->
     <string name="playMusicButtonContentDesc">PlayMusicButton</string>
-    <string name="musicTextPlaceholder">Music Placeholder</string>
     <string name="initialPlayerTime">0:00</string>
+
+    <!-- Strings for Yoga Component -->
+    <string name="yogaPageTitle">YOGA</string>
+    <string name="yogaCompletionMessage">GREAT JOB!</string>
+    <string name="yogaBeginText">START</string>
+    <string name="yogaInitialTimer">0:10</string>
+    <string name="yogaStartButtonText">Start</string>
+    <string name="yogaHeaderText">YOGA</string>
+    <string name="yogaImageContentDescription">Yoga Image Content Description</string>
+
+    <!-- Welcome messages -->
+    <string name="welcomeMessage_1">Good morning!</string>
+    <string name="welcomeMessage_2">Good afternoon!</string>
+    <string name="welcomeMessage_3">Good evening!</string>
+
+    <!-- Strings for Mindfulness component -->
+    <string name="mindfulnessButtonContentDescription">Mindfulness Button Content Description</string>
+
+    <!-- Strings for Web Support Articles component  -->
+    <string name="webSupportArticleContentDescription">Web Support Article Content Description</string>
+
+    <!-- Strings for Breathing Exercises component  -->
+    <string name="breathingExerciseCheckboxTitle">CheckBox</string>
+
+    <!-- Strings for Mood Tracker Component  -->
+    <string name="moodTrackerPlaceholder">Mood Tracker Placeholder</string>
 </resources>

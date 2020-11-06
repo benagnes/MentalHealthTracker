@@ -1,0 +1,37 @@
+name: Android Build
+
+on:
+  # Build will run on all pull requests to the master branch
+  pull_request:
+    branches:
+      - master
+  # Build will run on all published, edited, and created releases
+  release:
+    types: [published, created, edited]
+
+jobs:
+  build:
+    # Use the latest Ubuntu environment. For all environments see:
+    # https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks out the code we want to merge
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      # Setting up the JDK to build the project
+      # NOTE: If our JDK version ever changes in app/build.gradle it needs to be updated here
+      - name: Set Up JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+
+      - name: Run Gradle Lint
+        run: ./gradlew lint
+
+      - name: Run Gradle Tests
+        run: ./gradlew test
+
+      - name: Run Gradle Build
+        run: ./gradlew build

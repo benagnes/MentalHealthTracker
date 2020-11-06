@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 public class Yoga extends AppCompatActivity {
 
     TextView yogaTextView;
@@ -21,13 +23,13 @@ public class Yoga extends AppCompatActivity {
     ImageView image;
 
     static int counter = 0;
-    int imageIds[] = {R.drawable.downwardsdog, R.drawable.plank, R.drawable.cobra, R.drawable.childpose1, R.drawable.childpose1};
+    int[] imageIds = {R.mipmap.downwardsdog, R.mipmap.plank, R.mipmap.cobra, R.mipmap.childpose1, R.mipmap.childpose1};
     int numPoses = imageIds.length;
-    String poseNames[] = {"Downwards Dog", "Plank", "Cobra", "Child's Pose", "Child's Pose"};
+    String[] poseNames = {"Downwards Dog", "Plank", "Cobra", "Child's Pose", "Child's Pose"};
 
     public void resetTimer() {
-        timerTextView.setText("0:10");
-        goButton.setText("START");
+        timerTextView.setText(R.string.yogaInitialTimer);
+        goButton.setText(R.string.yogaBeginText);
         counterIsActive = false;
 
         counter++;
@@ -37,7 +39,7 @@ public class Yoga extends AppCompatActivity {
         }
         else {
             countDownTimer.cancel();
-            poseNameTextView.setText("GREAT JOB!");
+            poseNameTextView.setText(R.string.yogaCompletionMessage);
             image.setVisibility(View.INVISIBLE);
             timerTextView.setVisibility(View.INVISIBLE);
 
@@ -48,7 +50,6 @@ public class Yoga extends AppCompatActivity {
 
 
     public void buttonClicked(View view) {
-
         counterIsActive = true;
         goButton.setVisibility(View.INVISIBLE);
 
@@ -86,7 +87,8 @@ public class Yoga extends AppCompatActivity {
             secondString = "0" + secondString;
         }
 
-        timerTextView.setText(Integer.toString(minutes) + ":" + secondString);
+        timerTextView.setText(String.format(Locale.getDefault(), "%d:%s", minutes,
+                secondString));
     }
 
 
@@ -96,7 +98,7 @@ public class Yoga extends AppCompatActivity {
         setContentView(R.layout.activity_do_yoga);
 
         yogaTextView = findViewById(R.id.yogaTextView);
-        yogaTextView.setText("YOGA");
+        yogaTextView.setText(R.string.yogaPageTitle);
         poseNameTextView = findViewById(R.id.poseNameTextView);
         timerTextView = findViewById(R.id.countdownTextView);
         goButton = findViewById(R.id.startButton);

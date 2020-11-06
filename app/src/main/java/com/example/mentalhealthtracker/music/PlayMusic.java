@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -19,7 +20,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class PlayMusic extends AppCompatActivity {
     private MediaPlayer musicPlayer;
     private MusicPlayerState currentMediaPlayerState;
-    private final Handler mediaHandler = new Handler();
+    private final Handler mediaHandler = new Handler(Looper.getMainLooper());
     private int lastMediaLengthCache;
 
     private SeekBar mediaSeekBar;

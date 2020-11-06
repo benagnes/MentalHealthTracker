@@ -20,6 +20,4 @@
     </style>
 
     <style name="Theme.MentalHealthTracker.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="Theme.MentalHealthTracker.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

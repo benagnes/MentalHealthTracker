@@ -16,7 +16,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/yogaImageContentDescription" />
 
     <TextView
         android:id="@+id/countdownTextView"
@@ -38,7 +39,7 @@
         android:layout_marginTop="155dp"
         android:layout_marginBottom="15dp"
         android:onClick="buttonClicked"
-        android:text="Start"
+        android:text="@string/yogaStartButtonText"
         app:layout_constraintBottom_toTopOf="@+id/yogaImageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -53,7 +54,7 @@
         android:layout_marginTop="18dp"
         android:layout_marginBottom="39dp"
         android:fontFamily="sans-serif-black"
-        android:text="YOGA"
+        android:text="@string/yogaHeaderText"
         android:textAppearance="@style/TextAppearance.AppCompat.Display4"
         android:textColor="#3F51B5"
         android:textStyle="bold"
