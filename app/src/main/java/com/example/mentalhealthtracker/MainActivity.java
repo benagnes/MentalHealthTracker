@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.mentalhealthtracker.music.PlayMusic;
@@ -20,7 +21,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView welcomeMsg;
+    private EditText welcomeMsg;
     private Button doYogaButton;
     private Button playMusicButton;
     private Button moodTrackerButton;
@@ -36,20 +37,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // set welcome message based on time of day
-        welcomeMsg = (TextView) findViewById(R.id.welcomeMsg);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH");
-        LocalDateTime currentTime = LocalDateTime.now();
-        String hourofDay = currentTime.format(formatter);
-        int hour = Integer.parseInt(hourofDay);
-        if (hour >= 4 && hour < 12 ) {
-            welcomeMsg.setText("Good morning!");
-        }
-        else if (hour >= 12 && hour < 18) {
-            welcomeMsg.setText("Good afternoon!");
-        }
-        else {
-            welcomeMsg.setText("Good evening!");
-        }
+        setWelcomeMsg();
 
         // Button that links to 'Do Yoga' component
         doYogaButton = (Button) findViewById(R.id.yogaButton);
@@ -105,6 +93,24 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) { openMoreResources();}
         });
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public void setWelcomeMsg() {
+        welcomeMsg = (EditText) findViewById(R.id.welcomeMsg);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH");
+        LocalDateTime currentTime = LocalDateTime.now();
+        String hourofDay = currentTime.format(formatter);
+        int hour = Integer.parseInt(hourofDay);
+        if (hour >= 4 && hour < 12 ) {
+            welcomeMsg.setText("Good morning!");
+        }
+        else if (hour >= 12 && hour < 18) {
+            welcomeMsg.setText("Good afternoon!");
+        }
+        else {
+            welcomeMsg.setText("Good evening!");
+        }
     }
 
     public void openYogaActivity() {
