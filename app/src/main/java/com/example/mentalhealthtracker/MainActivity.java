@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.mentalhealthtracker.music.PlayMusic;
@@ -18,6 +19,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class MainActivity extends AppCompatActivity {
+    private EditText welcomeMsg;
     private Button doYogaButton;
     private Button playMusicButton;
     private Button moodTrackerButton;
@@ -33,20 +35,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // set welcome message based on time of day
-        TextView welcomeMsg = (TextView) findViewById(R.id.welcomeMsg);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH");
-        LocalDateTime currentTime = LocalDateTime.now();
-        String hourofDay = currentTime.format(formatter);
-        int hour = Integer.parseInt(hourofDay);
-        if (hour >= 4 && hour < 12 ) {
-            welcomeMsg.setText(R.string.welcomeMessage_1);
-        }
-        else if (hour >= 12 && hour < 18) {
-            welcomeMsg.setText(R.string.welcomeMessage_2);
-        }
-        else {
-            welcomeMsg.setText(R.string.welcomeMessage_3);
-        }
+        welcomeMsg = (EditText) findViewById(R.id.welcomeMsg);
+        setWelcomeMsg();
 
         // Button that links to 'Do Yoga' component
         doYogaButton = (Button) findViewById(R.id.yogaButton);
@@ -75,6 +65,23 @@ public class MainActivity extends AppCompatActivity {
         // Button that links to 'More Resources' component
         moreResourcesButton = (Button) findViewById(R.id.moreResourcesButton);
         moreResourcesButton.setOnClickListener(v -> openMoreResources());
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public void setWelcomeMsg() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH");
+        LocalDateTime currentTime = LocalDateTime.now();
+        String hourofDay = currentTime.format(formatter);
+        int hour = Integer.parseInt(hourofDay);
+        if (hour >= 4 && hour < 12 ) {
+            welcomeMsg.setText(R.string.welcomeMessage_1);
+        }
+        else if (hour >= 12 && hour < 18) {
+            welcomeMsg.setText(R.string.welcomeMessage_2);
+        }
+        else {
+            welcomeMsg.setText(R.string.welcomeMessage_3);
+        }
     }
 
     public void openYogaActivity() {

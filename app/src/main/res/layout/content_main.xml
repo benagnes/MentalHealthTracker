@@ -15,8 +15,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
+        <EditText
             android:id="@+id/welcomeMsg"
+            android:inputType="text"
+            android:autofillHints="@string/app_name"
+            android:hint="@string/app_name"
             android:layout_width="388dp"
             android:layout_height="72dp"
             android:background="#8BEA71"
@@ -28,14 +31,14 @@
             android:id="@+id/yogaButton"
             android:layout_width="388dp"
             android:layout_height="72dp"
-            android:text="@string/yogaActivityName"
+            android:text="@string/yoga"
             app:backgroundTint="#2196F3" />
 
         <Button
             android:id="@+id/playMusicButton"
             android:layout_width="388dp"
             android:layout_height="72dp"
-            android:text="@string/playMusicActivityName"
+            android:text="@string/playmusic"
             android:textColor="#FFFFFF"
             app:backgroundTint="#EFC635"
             app:layout_constraintTop_toBottomOf="@+id/welcomeMsg" />
@@ -44,33 +47,33 @@
             android:id="@+id/moodTrackerButton"
             android:layout_width="388dp"
             android:layout_height="72dp"
-            android:text="@string/moodTrackerActivityName" />
+            android:text="@string/moodtracker" />
 
         <Button
             android:id="@+id/breathingExButton"
             android:layout_width="388dp"
             android:layout_height="72dp"
-            android:text="@string/breathingExercisesActivityName"
+            android:text="@string/breathing"
             app:backgroundTint="#E83A3A" />
 
         <Button
             android:id="@+id/mindfulnessButton"
             android:layout_width="388dp"
             android:layout_height="72dp"
-            android:text="@string/mindfulnessActivityName"
+            android:text="@string/mindfulness"
             app:backgroundTint="#00BCD4" />
 
         <Button
             android:id="@+id/webSupportArticlesButton"
             android:layout_width="388dp"
             android:layout_height="72dp"
-            android:text="@string/webSupportArticlesActivityName" />
+            android:text="@string/websupport" />
 
         <Button
             android:id="@+id/moreResourcesButton"
             android:layout_width="388dp"
             android:layout_height="72dp"
-            android:text="@string/moreResourcesActivityName"
+            android:text="@string/moreresources"
             app:backgroundTint="#8BC34A" />
 
     </LinearLayout>
