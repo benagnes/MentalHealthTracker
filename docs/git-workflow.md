@@ -68,4 +68,4 @@ Whenever you finish a feature or make a bug fix it's good practice to test what 
 - `./gradlew test`
 - `./gradlew build`
 
-These are the same commands that the CI pipeline runs. (On Windows you may need to run the .bat file). Note the output files. Any new errors/warnings from the linter should be discussed with the team to assess the impact.
+These are the same commands that the CI pipeline runs. (On Windows you may need to run the `.bat` file). Note the output files. Any new errors/warnings from the linter should be discussed with the team to assess the impact.
