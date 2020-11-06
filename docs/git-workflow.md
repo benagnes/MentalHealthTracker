@@ -59,3 +59,13 @@ git checkout -b test <name of remote>/test
 ```
 
 - If there are any merge conflicts, first checkout the master branch of the upstream repository. In Android Studio, in the top menu `VCS > Git > Merge Changes` and select the branch you're looking to resolve conflicts with from the list. Use the merge viewer to pick and choose what should be kept in the commit. Commit all your changes with `git add .` and push them to the upstream master branch!
+
+### Testing Procedures
+
+Whenever you finish a feature or make a bug fix it's good practice to test what impact your changes had on the repo. Consider running the following commands locally:
+
+- `./gradlew lint`
+- `./gradlew test`
+- `./gradlew build`
+
+These are the same commands that the CI pipeline runs. (On Windows you may need to run the .bat file). Note the output files. Any new errors/warnings from the linter should be discussed with the team to assess the impact.
