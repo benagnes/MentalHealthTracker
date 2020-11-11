@@ -6,25 +6,35 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <LinearLayout
-        android:layout_width="389dp"
-        android:layout_height="579dp"
+        android:id="@+id/linearLayout"
+        android:layout_width="386dp"
+        android:layout_height="613dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
+        <TextView
             android:id="@+id/welcomeMsg"
-            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
             android:autofillHints="@string/app_name"
-            android:hint="@string/app_name"
-            android:layout_width="388dp"
-            android:layout_height="72dp"
-            android:background="#8BEA71"
+            android:background="#5C73EF"
             android:clickable="false"
             android:gravity="center"
+            android:hint="@string/app_name"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/letsGetStarted"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:background="#C5B314"
+            android:gravity="center"
+            android:text="@string/getStarted"
+            android:textColor="@color/white"
             android:textSize="24sp" />
 
         <Button
@@ -32,7 +42,7 @@
             android:layout_width="388dp"
             android:layout_height="72dp"
             android:text="@string/yoga"
-            app:backgroundTint="#2196F3" />
+            app:backgroundTint="#6F66EF" />
 
         <Button
             android:id="@+id/playMusicButton"
@@ -40,7 +50,7 @@
             android:layout_height="72dp"
             android:text="@string/playmusic"
             android:textColor="#FFFFFF"
-            app:backgroundTint="#EFC635"
+            app:backgroundTint="#E8C516"
             app:layout_constraintTop_toBottomOf="@+id/welcomeMsg" />
 
         <Button
@@ -54,28 +64,52 @@
             android:layout_width="388dp"
             android:layout_height="72dp"
             android:text="@string/breathing"
-            app:backgroundTint="#E83A3A" />
+            app:backgroundTint="#D5A310" />
 
         <Button
             android:id="@+id/mindfulnessButton"
             android:layout_width="388dp"
             android:layout_height="72dp"
             android:text="@string/mindfulness"
-            app:backgroundTint="#00BCD4" />
+            app:backgroundTint="#657AED" />
 
         <Button
-            android:id="@+id/webSupportArticlesButton"
+            android:id="@+id/meditationButton"
             android:layout_width="388dp"
             android:layout_height="72dp"
-            android:text="@string/websupport" />
+            android:text="@string/meditation"
+            app:backgroundTint="#EFBF2E" />
 
         <Button
             android:id="@+id/moreResourcesButton"
-            android:layout_width="388dp"
+            android:layout_width="match_parent"
             android:layout_height="72dp"
             android:text="@string/moreresources"
-            app:backgroundTint="#8BC34A" />
+            app:backgroundTint="#3464C5" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/favResources"
+        android:layout_width="378dp"
+        android:layout_height="30dp"
+        android:background="#B5A51E"
+        android:gravity="center"
+        android:text="@string/favourites"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="375dp"
+        android:layout_height="75dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

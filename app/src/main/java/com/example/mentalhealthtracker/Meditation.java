@@ -1,19 +1,19 @@
 package com.example.mentalhealthtracker;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
-
-public class MoodTracker extends AppCompatActivity {
+public class Meditation extends AppCompatActivity {
     // attributes
-    private static final String appBarTitle = "Mood Tracker";
+    private static final String appBarTitle = "Meditation";
 
     // methods
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mood_tracker);
+        setContentView(R.layout.activity_meditation);
 
         ActionBar mainActionBar = getSupportActionBar();
 

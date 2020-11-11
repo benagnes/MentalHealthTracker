@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <LinearLayout
+        android:layout_width="403dp"
+        android:layout_height="294dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/webSupportButton"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="@string/websupport"
+            app:backgroundTint="#4F63D6" />
+
+        <Button
+            android:id="@+id/exerciseButton"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:text="@string/exercises"
+            app:backgroundTint="#F1C84D" />
+
+        <Button
+            android:id="@+id/counsellorsButton"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:text="@string/counsellors"
+            app:backgroundTint="#7B8EF6" />
+
+        <Button
+            android:id="@+id/statisticsButton"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:text="@string/statistics"
+            app:backgroundTint="#FFC107" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
