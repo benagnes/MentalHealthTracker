@@ -12,8 +12,11 @@
     <string name="moreresources">More Resources</string>
 
     <!-- Strings used in the PlayMusic activity -->
-    <string name="playMusicButtonContentDesc">PlayMusicButton</string>
-    <string name="initialPlayerTime">0:00</string>
+    <string name="currentlyPlayingThumbnail">currentlyPlayingThumbnail</string>
+    <string name="currentlyPlayingTitle">Song Title</string>
+    <string name="songMeta">Song Meta</string>
+    <string name="miniplayerPlayButton">MiniPlayer Play Button</string>
+    <string name="miniplayerSkipButton">MiniPlayer Skip Button</string>
 
     <!-- Strings for Yoga Component -->
     <string name="yogaPageTitle">YOGA</string>
@@ -40,4 +43,15 @@
 
     <!-- Strings for Mood Tracker Component  -->
     <string name="moodTrackerPlaceholder">Mood Tracker Placeholder</string>
+    <string name="songListHeaderTemplate">Line 1</string>
+    <string name="songListSubHeaderTemplate">Line 2</string>
+    <string name="songListViewContentDescription">Song Content Description</string>
+    <string name="defaultPlayerTimeStamp">00:00</string>
+    <string name="fpControlButton">Control Button</string>
+    <string name="skipBackwardsButton">Skip Backwards Button</string>
+    <string name="skipForwardsButton">Skip Forwards Button</string>
+    <string name="defaultSongArtistText">Song Artists</string>
+    <string name="defaultSongTitle">Song Title</string>
+    <string name="full_player_close_button">Full Player Close Button</string>
+    <string name="songThumbnail">Song Thumbnail</string>
 </resources>

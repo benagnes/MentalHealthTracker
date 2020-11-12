@@ -4,70 +4,105 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/MusicText"
-        android:layout_width="195dp"
-        android:layout_height="151dp"
-        android:gravity="center"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/musicSeekBar"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/songListRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/background_dark"
+        android:padding="4dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/musicBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <SeekBar
-        android:id="@+id/musicSeekBar"
-        android:layout_width="376dp"
-        android:layout_height="35dp"
-        android:layout_marginBottom="108dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/musicBar"
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        android:background="#1C1C1C"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:clickable="true"
-        android:contentDescription="@string/playMusicButtonContentDesc"
-        android:focusable="true"
-        android:onClick="changeMediaState"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/musicSeekBar"
-        app:layout_constraintVertical_bias="0.333"
-        app:srcCompat="@android:drawable/ic_media_play" />
+        <ProgressBar
+            android:id="@+id/miniPlayerProgress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:progress="0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/mediaTimePlayed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="56dp"
-        android:text="@string/initialPlayerTime"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/floatingActionButton"
-        app:layout_constraintHorizontal_bias="0.54"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/musicSeekBar"
-        app:layout_constraintVertical_bias="0.263" />
+        <ImageView
+            android:id="@+id/miniPlayerThumbnail"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:contentDescription="@string/currentlyPlayingThumbnail"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_music_note_24" />
 
-    <TextView
-        android:id="@+id/mediaTimeLength"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="56dp"
-        android:text="@string/initialPlayerTime"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.543"
-        app:layout_constraintStart_toEndOf="@+id/floatingActionButton"
-        app:layout_constraintTop_toBottomOf="@+id/musicSeekBar"
-        app:layout_constraintVertical_bias="0.22" />
+        <TextView
+            android:id="@+id/miniHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:text="@string/currentlyPlayingTitle"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/miniplayerSubHeader"
+            app:layout_constraintStart_toEndOf="@+id/miniPlayerThumbnail"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.869" />
 
+        <TextView
+            android:id="@+id/miniplayerSubHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/songMeta"
+            android:textColor="@android:color/tertiary_text_light"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/miniPlayerThumbnail" />
+
+        <ImageButton
+            android:id="@+id/miniPlayerSkipForwardButton"
+            android:layout_width="48dp"
+            android:layout_height="52dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:background="#1C1C1C"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/miniPlayerProgress"
+            app:layout_constraintVertical_bias="0.428"
+            app:srcCompat="@drawable/ic_baseline_skip_next_24"
+            android:contentDescription="@string/miniplayerPlayButton" />
+
+        <ImageButton
+            android:id="@+id/miniPlayerControlButton"
+            android:layout_width="48dp"
+            android:layout_height="52dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:background="#1C1C1C"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/miniPlayerSkipForwardButton"
+            app:layout_constraintTop_toBottomOf="@+id/miniPlayerProgress"
+            app:layout_constraintVertical_bias="0.428"
+            app:srcCompat="@drawable/ic_baseline_play_arrow_24"
+            android:contentDescription="@string/miniplayerSkipButton" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
