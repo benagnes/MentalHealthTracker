@@ -1,5 +1,6 @@
 package com.example.mentalhealthtracker;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.media.MediaPlayer;
@@ -13,7 +14,8 @@ import android.widget.TextView;
 import java.util.Locale;
 
 public class Yoga extends AppCompatActivity {
-
+    // attributes
+    private static final String appBarTitle = "Yoga";
     TextView yogaTextView;
     TextView poseNameTextView;
     TextView timerTextView;
@@ -27,6 +29,7 @@ public class Yoga extends AppCompatActivity {
     int numPoses = imageIds.length;
     String[] poseNames = {"Downwards Dog", "Plank", "Cobra", "Child's Pose", "Child's Pose"};
 
+    // methods
     public void resetTimer() {
         timerTextView.setText(R.string.yogaInitialTimer);
         goButton.setText(R.string.yogaBeginText);
@@ -103,6 +106,13 @@ public class Yoga extends AppCompatActivity {
         timerTextView = findViewById(R.id.countdownTextView);
         goButton = findViewById(R.id.startButton);
         image = (ImageView) findViewById(R.id.yogaImageView);
+
+        ActionBar mainActionBar = getSupportActionBar();
+
+        if (mainActionBar != null) {
+            mainActionBar.setTitle(appBarTitle);
+            mainActionBar.setDisplayHomeAsUpEnabled(true);
+        }
     }
 
 

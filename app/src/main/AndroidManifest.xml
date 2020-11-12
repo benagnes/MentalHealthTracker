@@ -9,23 +9,38 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MentalHealthTracker">
-        <activity android:name="com.example.mentalhealthtracker.Yoga" />
-        <activity android:name="com.example.mentalhealthtracker.MoodTracker" />
-        <activity android:name="com.example.mentalhealthtracker.BreathingExercises" />
-        <activity android:name="com.example.mentalhealthtracker.Mindfulness" />
-        <activity android:name="com.example.mentalhealthtracker.WebSupportArticles" />
-        <activity android:name="com.example.mentalhealthtracker.MoreResources" />
+
+        <activity
+            android:name="com.example.mentalhealthtracker.Yoga"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name="com.example.mentalhealthtracker.music.PlayMusic"
             android:parentActivityName=".MainActivity">
         </activity>
+        <activity
+            android:name="com.example.mentalhealthtracker.MoodTracker"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name="com.example.mentalhealthtracker.BreathingExercises"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name="com.example.mentalhealthtracker.Mindfulness"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name="com.example.mentalhealthtracker.Meditation"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name="com.example.mentalhealthtracker.MoreResources"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name="com.example.mentalhealthtracker.WebSupportArticles"
+            android:parentActivityName=".MoreResources"/>
         <activity
             android:name="com.example.mentalhealthtracker.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.MentalHealthTracker.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

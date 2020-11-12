@@ -10,6 +10,18 @@
     <string name="mindfulness">Mindfulness</string>
     <string name="websupport">Web Support Articles</string>
     <string name="moreresources">More Resources</string>
+    <string name="meditation">Meditation</string>
+    <string name="exercises">Exercises</string>
+    <string name="counsellors">Connect with Counsellors</string>
+    <string name="statistics">View Statistics</string>
+    <string name="getStarted">Lets Get Started</string>
+
+    <!-- Strings used for favourites panel -->
+    <string name="favourites">Favourite Resources</string>
+    <string name="favourites1">Favourite 1</string>
+    <string name="favourites2">Favourite 2</string>
+    <string name="favourites3">Favourite 3</string>
+    <string name="editFav">Edit</string>
 
     <!-- Strings used in the PlayMusic activity -->
     <string name="playMusicButtonContentDesc">PlayMusicButton</string>
