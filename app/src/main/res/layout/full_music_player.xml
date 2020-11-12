@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fullMusicPlayer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <ImageView
+        android:id="@+id/fpSongThumbnail"
+        android:layout_width="214dp"
+        android:layout_height="214dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fpCloseButton"
+        app:srcCompat="@drawable/ic_launcher_background"
+        android:contentDescription="@string/songThumbnail" />
+
+    <ImageButton
+        android:id="@+id/fpCloseButton"
+        android:layout_width="40dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_24"
+        android:contentDescription="@string/full_player_close_button" />
+
+    <TextView
+        android:id="@+id/fpSongTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/defaultSongTitle"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fpSongThumbnail" />
+
+    <TextView
+        android:id="@+id/fpSongArtists"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/defaultSongArtistText"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fpSongTitle" />
+
+    <SeekBar
+        android:id="@+id/fpSeekBar"
+        style="@android:style/Widget.DeviceDefault.Light.SeekBar"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fpSongArtists"
+        tools:progress="25" />
+
+    <TextView
+        android:id="@+id/fpPlayTimeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="12dp"
+        android:shadowColor="#FFFFFF"
+        android:text="@string/defaultPlayerTimeStamp"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fpSeekBar" />
+
+    <TextView
+        android:id="@+id/fpPlayTimeLeftText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/defaultPlayerTimeStamp"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fpSeekBar" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fpControlButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:clickable="true"
+        android:tint="@color/white"
+        app:backgroundTint="#101010"
+        app:borderWidth="0dp"
+        app:elevation="0dp"
+        app:fabCustomSize="70dp"
+        app:hoveredFocusedTranslationZ="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fpSeekBar"
+        app:pressedTranslationZ="0dp"
+        app:rippleColor="#8AE1E1E1"
+        app:srcCompat="@drawable/ic_baseline_play_arrow_24"
+        app:tint="#ACACAC"
+        android:contentDescription="@string/fpControlButton"
+        android:focusable="true" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fpSkipBackward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:clickable="true"
+        android:tint="@color/white"
+        app:backgroundTint="#101010"
+        app:borderWidth="0dp"
+        app:elevation="0dp"
+        app:hoveredFocusedTranslationZ="0dp"
+        app:layout_constraintEnd_toStartOf="@+id/fpControlButton"
+        app:layout_constraintTop_toBottomOf="@+id/fpSeekBar"
+        app:pressedTranslationZ="0dp"
+        app:rippleColor="#8AE1E1E1"
+        app:srcCompat="@drawable/ic_baseline_skip_previous_24"
+        app:tint="#ACACAC"
+        android:focusable="true"
+        android:contentDescription="@string/skipBackwardsButton" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fpSkipForward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="60dp"
+        android:clickable="true"
+        app:backgroundTint="#101010"
+        app:borderWidth="0dp"
+        app:elevation="0dp"
+        app:hoveredFocusedTranslationZ="0dp"
+        app:layout_constraintStart_toEndOf="@+id/fpControlButton"
+        app:layout_constraintTop_toBottomOf="@+id/fpSeekBar"
+        app:pressedTranslationZ="0dp"
+        app:rippleColor="#8AE1E1E1"
+        app:srcCompat="@drawable/ic_baseline_skip_next_24"
+        app:tint="#ACACAC"
+        android:focusable="true"
+        android:contentDescription="@string/skipForwardsButton" />
+</androidx.constraintlayout.widget.ConstraintLayout>
