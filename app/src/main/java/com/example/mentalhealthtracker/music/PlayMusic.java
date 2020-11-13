@@ -445,6 +445,7 @@ public class PlayMusic extends AppCompatActivity {
             return;
         }
 
+        musicPlayer.reset();
         musicPlayer.release();
         musicPlayer = null;
         handler.removeCallbacks(updateUIThread);
