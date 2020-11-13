@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.mentalhealthtracker.favourites.EditFavourites;
 import com.example.mentalhealthtracker.music.PlayMusic;
 
 import java.time.LocalDateTime;
@@ -59,6 +60,20 @@ public class MainActivity extends AppCompatActivity {
         // Button that links to 'More Resources' component
         Button moreResourcesButton = (Button) findViewById(R.id.moreResourcesButton);
         moreResourcesButton.setOnClickListener(v -> openMoreResources());
+        
+        // Button that links to 'Edit Favourites' component
+        Button editFavouritesButton = (Button) findViewById(R.id.editFavouritesButton);
+        editFavouritesButton.setOnClickListener(v -> openEditFavourites());
+
+        // Defaults for favourite resources
+        Button favourites1Button = (Button) findViewById(R.id.favourite1Button);
+        favourites1Button.setOnClickListener(v -> setDefaultFavourites(1));
+
+        Button favourites2Button = (Button) findViewById(R.id.favourite2Button);
+        favourites2Button.setOnClickListener(v -> setDefaultFavourites(2));
+
+        Button favourites3Button = (Button) findViewById(R.id.favourite3Button);
+        favourites3Button.setOnClickListener(v -> setDefaultFavourites(3));
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -111,6 +126,29 @@ public class MainActivity extends AppCompatActivity {
     public void openMoreResources() {
         Intent intent = new Intent(this, MoreResources.class);
         startActivity(intent);
+    }
+    
+    public void openEditFavourites() {
+        Intent intent = new Intent(this, EditFavourites.class);
+        startActivity(intent);
+    }
+
+    public void setDefaultFavourites(int favouriteNum) {
+        switch(favouriteNum) {
+            case 1:
+                Intent intent = new Intent(this, PlayMusic.class);
+                startActivity(intent);
+                break;
+            case 2:
+                Intent intent2 = new Intent(this, Yoga.class);
+                startActivity(intent2);
+                break;
+            case 3:
+                Intent intent3 = new Intent(this, MoodTracker.class);
+                startActivity(intent3);
+                break;
+            default:
+        }
     }
 
     @Override

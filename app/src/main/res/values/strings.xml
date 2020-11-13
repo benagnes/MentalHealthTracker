@@ -16,12 +16,16 @@
     <string name="statistics">View Statistics</string>
     <string name="getStarted">Lets Get Started</string>
 
-    <!-- Strings used for favourites panel -->
+    <!-- Strings used for favourite resources -->
     <string name="favourites">Favourite Resources</string>
     <string name="favourites1">Favourite 1</string>
     <string name="favourites2">Favourite 2</string>
     <string name="favourites3">Favourite 3</string>
-    <string name="editFav">Edit</string>
+    <string name="editFav">Edit Favourites</string>
+    <string name="selectFavourite1">Select Favourite 1</string>
+    <string name="selectFavourite2">Select Favourite 2</string>
+    <string name="selectFavourite3">Select Favourite 3</string>
+
 
     <!-- Strings used in the PlayMusic activity -->
     <string name="currentlyPlayingThumbnail">currentlyPlayingThumbnail</string>
