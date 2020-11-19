@@ -29,6 +29,17 @@
     <string name="songMeta">Song Meta</string>
     <string name="miniplayerPlayButton">MiniPlayer Play Button</string>
     <string name="miniplayerSkipButton">MiniPlayer Skip Button</string>
+    <string name="songListHeaderTemplate">Line 1</string>
+    <string name="songListSubHeaderTemplate">Line 2</string>
+    <string name="songListViewContentDescription">Song Content Description</string>
+    <string name="defaultPlayerTimeStamp">00:00</string>
+    <string name="fpControlButton">Control Button</string>
+    <string name="skipBackwardsButton">Skip Backwards Button</string>
+    <string name="skipForwardsButton">Skip Forwards Button</string>
+    <string name="defaultSongArtistText">Song Artists</string>
+    <string name="defaultSongTitle">Song Title</string>
+    <string name="full_player_close_button">Full Player Close Button</string>
+    <string name="songThumbnail">Song Thumbnail</string>
 
     <!-- Strings for Yoga Component -->
     <string name="yogaPageTitle">YOGA</string>
@@ -45,7 +56,14 @@
     <string name="welcomeMessage_3">Good evening!</string>
 
     <!-- Strings for Mindfulness component -->
-    <string name="mindfulnessButtonContentDescription">Mindfulness Button Content Description</string>
+    <string name="mindfulness_activity_title">Mindfulness Activity Title</string>
+    <string name="mindfulness_activity_description">Mindfulness Activity Description</string>
+    <string name="mindfulnessActivityWelcomeText">Start an activity, we\'ll track your progress</string>
+    <string name="mindfulnessStepTitleTemplate">Mindfulness Activity Step Title</string>
+    <string name="mindfulnessStepDefaultNumber">1</string>
+    <string name="mindfulnessStepTimerTemplate">0m 0s</string>
+    <string name="mindfulnessSkipButtonContentDesc">Skip Step Button</string>
+    <string name="mindfulnessStepDescriptionTemplate">Mindfulness activity step description</string>
 
     <!-- Strings for Web Support Articles component  -->
     <string name="webSupportArticleContentDescription">Web Support Article Content Description</string>
@@ -55,15 +73,4 @@
 
     <!-- Strings for Mood Tracker Component  -->
     <string name="moodTrackerPlaceholder">Mood Tracker Placeholder</string>
-    <string name="songListHeaderTemplate">Line 1</string>
-    <string name="songListSubHeaderTemplate">Line 2</string>
-    <string name="songListViewContentDescription">Song Content Description</string>
-    <string name="defaultPlayerTimeStamp">00:00</string>
-    <string name="fpControlButton">Control Button</string>
-    <string name="skipBackwardsButton">Skip Backwards Button</string>
-    <string name="skipForwardsButton">Skip Forwards Button</string>
-    <string name="defaultSongArtistText">Song Artists</string>
-    <string name="defaultSongTitle">Song Title</string>
-    <string name="full_player_close_button">Full Player Close Button</string>
-    <string name="songThumbnail">Song Thumbnail</string>
 </resources>
