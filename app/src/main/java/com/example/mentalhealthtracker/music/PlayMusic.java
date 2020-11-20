@@ -521,7 +521,7 @@ public class PlayMusic extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.musicShuffle) {
-            Log.i(TAG, "Shuffling songs ...");
+            Log.i(TAG, "Shuffling song library");
             // If there's a currently selected song, transfer it to the updated recycler view
             if (songViewModel.isSongSelected()) {
                 int selectedSongId = songListAdapter.getSelectedSongId();
