@@ -7,13 +7,14 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
@@ -21,6 +22,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mentalhealthtracker.R;
 import com.example.mentalhealthtracker.music.db.Song;
@@ -30,6 +32,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class PlayMusic extends AppCompatActivity {
     private MediaPlayer musicPlayer;
@@ -90,26 +93,52 @@ public class PlayMusic extends AppCompatActivity {
         // Setting up the view model
         songViewModel = new ViewModelProvider(this).get(SongViewModel.class);
         songViewModel.getAllSongs().observe(this, songs -> {
+            // Transfer the previously selected index to the new index after the shuffle
+            if (songViewModel.isShuffleInProgress()) {
+                int i = 0;
+                for (Song s : songs) {
+                    if (s.getId() == songViewModel.getSelectedSongId()) {
+                        s.setPlaying(true);
+                        songViewModel.setSelectedSongIndex(i);
+                    }
+                    i++;
+                }
+            }
+
             songListAdapter.setSongs(songs);
             songLibrary = (ArrayList<Song>) songs;
 
             Log.i(TAG, "Song library loaded with " + songLibrary.size() + " songs");
 
             // Update the Mini Player after we receiver all the data
-            if (!songViewModel.isSongSelected())
-                musicBar.setVisibility(View.GONE);
-            else {
+            if (songViewModel.isSongSelected()) {
                 musicBar.setVisibility(View.VISIBLE);
+                // Only re-initialize the music player and UI if we're not in the middle of
+                // shuffling the songs. This will prevent flickers, and RecyclerView indexing issues
+                if (!songViewModel.isShuffleInProgress()) {
+                    initializeMusicPlayer();
+                    setMusicPlayerUI();
 
-                initializeMusicPlayer();
-                setMusicPlayerUI();
+                    MusicPlayerState previousState = songViewModel.getPlayerState();
 
-                MusicPlayerState previousState = songViewModel.getPlayerState();
+                    if (previousState == MusicPlayerState.PLAYING)
+                        playMusic();
+                }
+            }
+            else {
+                // If no song was selected remove the visibility of the Mini Player
+                musicBar.setVisibility(View.GONE);
+            }
 
-                if (previousState == MusicPlayerState.PLAYING)
-                    playMusic();
+            if (songViewModel.isShuffleInProgress()) {
+                // For a mid shuffle don't re-render the Mini Player or the full screen Player
+                // simply notify the user of the shuffle.
+                Toast.makeText(this, String.format(Locale.getDefault(),
+                        "Shuffled %d songs", songs.size()), Toast.LENGTH_SHORT).show();
+                songViewModel.setShuffleInProgress(false);
             }
         });
+
         songListAdapter.setOnSongClickListener(this::selectSong);
     }
 
@@ -486,6 +515,32 @@ public class PlayMusic extends AppCompatActivity {
                         songViewModel.getPlayerUIState().toString());
             }
         }
+    }
+
+    // Called when a menu option is clicked
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.musicShuffle) {
+            Log.i(TAG, "Shuffling songs ...");
+            // If there's a currently selected song, transfer it to the updated recycler view
+            if (songViewModel.isSongSelected()) {
+                int selectedSongId = songListAdapter.getSelectedSongId();
+                songViewModel.setShuffleInProgress(true);
+                songViewModel.setSelectedSongId(selectedSongId);
+            }
+
+            // Shuffle the songs
+            songViewModel.getRepository().shuffleSongs();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    // Called when the menu is about to be created
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.play_music_menu, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
     // When the app stops, make sure the state is saved

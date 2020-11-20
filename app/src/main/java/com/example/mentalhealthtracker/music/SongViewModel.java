@@ -17,6 +17,8 @@ public class SongViewModel extends AndroidViewModel {
     private int selectedSongIndex;
     private boolean isSongSelected;
     private int playerProgress;
+    private boolean shuffleInProgress;
+    private int selectedSongId;
 
     // Mini player
     private MusicPlayerState playerState;
@@ -27,7 +29,9 @@ public class SongViewModel extends AndroidViewModel {
         repository = new SongRepository(application);
         allSongs = repository.getAllSongs();
         selectedSongIndex = -1;
+        selectedSongId = -1;
         isSongSelected = false;
+        shuffleInProgress = false;
         playerState = MusicPlayerState.NOT_INITIALIZED;
         playerUIState = MusicPlayerUIState.NO_PLAYER;
     }
@@ -74,5 +78,25 @@ public class SongViewModel extends AndroidViewModel {
 
     public void setPlayerUIState(MusicPlayerUIState playerUIState) {
         this.playerUIState = playerUIState;
+    }
+
+    public boolean isShuffleInProgress() {
+        return shuffleInProgress;
+    }
+
+    public void setShuffleInProgress(boolean shuffleInProgress) {
+        this.shuffleInProgress = shuffleInProgress;
+    }
+
+    public SongRepository getRepository() {
+        return repository;
+    }
+
+    public int getSelectedSongId() {
+        return selectedSongId;
+    }
+
+    public void setSelectedSongId(int selectedSongId) {
+        this.selectedSongId = selectedSongId;
     }
 }

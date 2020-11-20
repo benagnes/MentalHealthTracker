@@ -22,15 +22,19 @@ public class Song {
     @ColumnInfo
     private int localAudioFileId;
 
+    @ColumnInfo
+    private int order;
+
     @Ignore
     private boolean isPlaying;
 
-    public Song(String title, String artists, String thumbnailURL, int localAudioFileId) {
+    public Song(String title, String artists, String thumbnailURL, int localAudioFileId, int order) {
         this.title = title;
         this.artists = artists;
         this.thumbnailURL = thumbnailURL;
         this.isPlaying = false;
         this.localAudioFileId = localAudioFileId;
+        this.order = order;
     }
 
     public int getId() {
@@ -79,5 +83,13 @@ public class Song {
 
     public void setLocalAudioFileId(int localAudioFileId) {
         this.localAudioFileId = localAudioFileId;
+    }
+
+    public int getOrder() {
+        return order;
+    }
+
+    public void setOrder(int order) {
+        this.order = order;
     }
 }

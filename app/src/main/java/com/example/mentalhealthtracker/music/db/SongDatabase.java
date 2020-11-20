@@ -39,13 +39,13 @@ public abstract class SongDatabase extends RoomDatabase {
                 instance.songDao().insertAll(
                         new Song("Levity", "v e n n",
                                 "https://i.scdn.co/image/ab67616d000048515f5e2c82b60159cfc694d5d1"
-                                , R.raw.venn_levity),
+                                , R.raw.venn_levity, 0),
                         new Song("Serenity", "Man from Mars",
                                 "https://i.scdn.co/image/ab67616d00004851ec3d4294af8f3a6db05240b3",
-                                R.raw.man_from_mars_serenity),
+                                R.raw.man_from_mars_serenity, 1),
                         new Song("Lost Thoughts", "First Light Circus",
                                 "https://i.scdn.co/image/ab67616d000048515c955d94bfda3da888865e28",
-                                R.raw.first_light_circus_lost_thought)
+                                R.raw.first_light_circus_lost_thought, 2)
                 );
             });
         }

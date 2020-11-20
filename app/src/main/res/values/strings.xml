@@ -26,13 +26,14 @@
     <string name="selectFavourite2">Select Favourite 2</string>
     <string name="selectFavourite3">Select Favourite 3</string>
 
-
     <!-- Strings used in the PlayMusic activity -->
     <string name="currentlyPlayingThumbnail">currentlyPlayingThumbnail</string>
     <string name="currentlyPlayingTitle">Song Title</string>
     <string name="songMeta">Song Meta</string>
     <string name="miniplayerPlayButton">MiniPlayer Play Button</string>
     <string name="miniplayerSkipButton">MiniPlayer Skip Button</string>
+    <string name="music_search_button">Search Music</string>
+    <string name="shuffle_music">Shuffle Music</string>
 
     <!-- Strings for Yoga Component -->
     <string name="yogaPageTitle">YOGA</string>
