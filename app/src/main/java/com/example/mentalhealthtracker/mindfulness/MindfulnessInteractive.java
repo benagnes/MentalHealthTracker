@@ -171,10 +171,6 @@ public class MindfulnessInteractive extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
-        if (viewModel.getState() == MindfulnessStepViewModel.InteractiveActivityState.STARTED) {
-            moveToStep(viewModel.getCurrentStep(), false);
-        }
     }
 
     @Override
