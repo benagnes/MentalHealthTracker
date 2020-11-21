@@ -49,7 +49,7 @@
     <string name="yogaPageTitle">YOGA</string>
     <string name="yogaCompletionMessage">GREAT JOB!</string>
     <string name="yogaBeginText">START</string>
-    <string name="yogaInitialTimer">0:10</string>
+    <string name="yogaInitialTimer">0:45</string>
     <string name="yogaStartButtonText">Start</string>
     <string name="yogaHeaderText">YOGA</string>
     <string name="yogaImageContentDescription">Yoga Image Content Description</string>
