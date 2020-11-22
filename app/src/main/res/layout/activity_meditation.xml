@@ -1,6 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/exerciseTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="577dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/exerciseHeaderText"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="#FB0303"
+        android:textStyle="bold"
+        android:typeface="sans"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/exerciseStartButton"
+        android:layout_width="118dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="524dp"
+        android:fontFamily="sans-serif-black"
+        android:onClick="exerciseButtonClicked"
+        android:text="@string/exerciseStartButtonText"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:backgroundTint="#FA3141"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseTextView" />
+
+    <TextView
+        android:id="@+id/countdownExerciseTextView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="464dp"
+        android:text="@string/exerciseInitialTimer"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="#0B0B0B"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseStartButton" />
+
+    <TextView
+        android:id="@+id/exerciseNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="550dp"
+        android:layout_marginBottom="80dp"
+        android:fontFamily="sans-serif-black"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="#FD0303"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/exerciseImageView"
+        android:layout_width="402dp"
+        android:layout_height="347dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="103dp"
+        android:contentDescription="@string/exerciseImageContentDescription"
+        app:layout_constraintBottom_toTopOf="@+id/countdownExerciseTextView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseStartButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>
