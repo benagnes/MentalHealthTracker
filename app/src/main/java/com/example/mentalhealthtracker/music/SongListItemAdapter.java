@@ -72,6 +72,15 @@ public class SongListItemAdapter extends RecyclerView.Adapter<SongListItemAdapte
         return this.songList;
     }
 
+    // Gets the index of the first song that's selected
+    public int getSelectedSongId() {
+        for (Song s: songList) {
+            if (s.isPlaying())
+                return s.getId();
+        }
+        return -1;
+    }
+
     public static class SongListItemHolder extends RecyclerView.ViewHolder {
         public ImageView songThumbnail;
         public TextView songHeader;
