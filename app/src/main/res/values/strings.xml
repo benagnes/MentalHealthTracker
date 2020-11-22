@@ -76,5 +76,41 @@
     <string name="breathingExerciseCheckboxTitle">CheckBox</string>
 
     <!-- Strings for Mood Tracker Component  -->
-    <string name="moodTrackerPlaceholder">Mood Tracker Placeholder</string>
+    <string name="welcomeToMoodTracker">Welcome to Mood Tracker</string>
+    <string name="selectDate">Select a Date</string>
+    <string name="recordMood">Record Mood</string>
+    <string name="changeMood">Change Mood</string>
+    <string name="recordedmood">Recorded Entry:</string>
+
+    <string name="mood">Mood</string>
+    <string name="happyMood">Happy</string>
+    <string name="sadMood">Sad</string>
+    <string name="relaxedMood">Relaxed</string>
+    <string name="stressedMood">Stressed</string>
+    <string name="angryMood">Angry</string>
+    <string name="confirmMood">Confirm Mood</string>
+
+    <string name="energy">Energy</string>
+    <string name="sleepEnergy">I want to sleep</string>
+    <string name="lowEnergy">Low</string>
+    <string name="normalEnergy">Normal</string>
+    <string name="highEnergy">High</string>
+    <string name="insaneEnergy">Bouncing off the walls!</string>
+    <string name="confirmEnergy">Confirm Energy</string>
+
+    <string name="social_meter">Social Meter</string>
+    <string name="soloSocial">Today is a Me day</string>
+    <string name="drainedSocial">Not feeling it</string>
+    <string name="undecidedSocial">Undecided</string>
+    <string name="socialSocial">Feeling Social</string>
+    <string name="partySocial">Lets Party!</string>
+    <string name="confirmSocialMeter">Confirm Social Meter</string>
+
+    <string name="productivity">Productivity</string>
+    <string name="distracted">Distracted</string>
+    <string name="unproductive">Unproductive</string>
+    <string name="mediocore">Mediocre</string>
+    <string name="productive">Productive</string>
+    <string name="accomplished">Accomplished A LOT</string>
+    <string name="confirmProductivity">Confirm Productivity</string>
 </resources>

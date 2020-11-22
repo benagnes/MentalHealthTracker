@@ -20,8 +20,8 @@
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MoodTracker"
-            android:parentActivityName=".MainActivity" />
+            android:name="com.example.mentalhealthtracker.mood_tracker.MoodTracker"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".BreathingExercises"
             android:parentActivityName=".MainActivity" />
@@ -41,15 +41,11 @@
             android:name="com.example.mentalhealthtracker.favourites.EditFavourites"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name="com.example.mentalhealthtracker.favourites.SelectFavourites"
-            android:parentActivityName="com.example.mentalhealthtracker.favourites.EditFavourites"/>
-        <activity
             android:name="com.example.mentalhealthtracker.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.MentalHealthTracker.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
