@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.example.mentalhealthtracker.mindfulness.Mindfulness;
 import com.example.mentalhealthtracker.favourites.EditFavourites;
+import com.example.mentalhealthtracker.mood_tracker.MoodTracker;
 import com.example.mentalhealthtracker.music.PlayMusic;
 
 import java.time.LocalDateTime;
@@ -31,49 +32,49 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // set welcome message based on time of day
-        welcomeMsg = (TextView) findViewById(R.id.welcomeMsg);
+        welcomeMsg = findViewById(R.id.welcomeMsg);
         setWelcomeMsg();
 
         // Button that links to 'Do Yoga' component
-        Button doYogaButton = (Button) findViewById(R.id.yogaButton);
+        Button doYogaButton = findViewById(R.id.yogaButton);
         doYogaButton.setOnClickListener(v -> openYogaActivity());
 
         // Button that links to 'Play Music' component
-        Button playMusicButton = (Button) findViewById(R.id.playMusicButton);
+        Button playMusicButton = findViewById(R.id.playMusicButton);
         playMusicButton.setOnClickListener(v -> openPlayMusicActivity());
 
         // Button that links to 'Mood Tracker' component
-        Button moodTrackerButton = (Button) findViewById(R.id.moodTrackerButton);
+        Button moodTrackerButton = findViewById(R.id.moodTrackerButton);
         moodTrackerButton.setOnClickListener(v -> openMoodTracker());
 
         // Button that links to 'Breathing Exercises' component
-        Button breathingExButton = (Button) findViewById(R.id.breathingExButton);
+        Button breathingExButton = findViewById(R.id.breathingExButton);
         breathingExButton.setOnClickListener(v -> openBreathingExercises());
 
         // Button that links to 'Mindfulness' component
-        Button mindfulnessButton = (Button) findViewById(R.id.mindfulnessButton);
+        Button mindfulnessButton = findViewById(R.id.mindfulnessButton);
         mindfulnessButton.setOnClickListener(v -> openMindfulness());
 
         // Button that links to 'Meditation' component
-        Button meditationButton = (Button) findViewById(R.id.meditationButton);
+        Button meditationButton = findViewById(R.id.meditationButton);
         meditationButton.setOnClickListener(v -> openMeditation());
 
         // Button that links to 'More Resources' component
-        Button moreResourcesButton = (Button) findViewById(R.id.moreResourcesButton);
+        Button moreResourcesButton = findViewById(R.id.moreResourcesButton);
         moreResourcesButton.setOnClickListener(v -> openMoreResources());
         
         // Button that links to 'Edit Favourites' component
-        Button editFavouritesButton = (Button) findViewById(R.id.editFavouritesButton);
+        Button editFavouritesButton = findViewById(R.id.editFavouritesButton);
         editFavouritesButton.setOnClickListener(v -> openEditFavourites());
 
         // Defaults for favourite resources
-        Button favourites1Button = (Button) findViewById(R.id.favourite1Button);
+        Button favourites1Button = findViewById(R.id.favourite1Button);
         favourites1Button.setOnClickListener(v -> setDefaultFavourites(1));
 
-        Button favourites2Button = (Button) findViewById(R.id.favourite2Button);
+        Button favourites2Button = findViewById(R.id.favourite2Button);
         favourites2Button.setOnClickListener(v -> setDefaultFavourites(2));
 
-        Button favourites3Button = (Button) findViewById(R.id.favourite3Button);
+        Button favourites3Button = findViewById(R.id.favourite3Button);
         favourites3Button.setOnClickListener(v -> setDefaultFavourites(3));
     }
 
@@ -145,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent2);
                 break;
             case 3:
-                Intent intent3 = new Intent(this, MoodTracker.class);
+                Intent intent3 = new Intent(this, BreathingExercises.class);
                 startActivity(intent3);
                 break;
             default:
