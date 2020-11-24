@@ -65,6 +65,7 @@
     <string name="exerciseImageContentDescription">Exercise Image Content Description</string>
     <string name="exerciseBeginText">START</string>
     <string name="exerciseCompletionMessage">GREAT JOB!</string>
+    <string name="getReady">"Get Ready!"</string>
 
     <!-- Welcome messages -->
     <string name="welcomeMessage_1">Good morning!</string>

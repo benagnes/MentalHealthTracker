@@ -15,9 +15,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.Locale;
 
-public class Meditation extends AppCompatActivity {
+public class Exercises extends AppCompatActivity {
     // attributes
-    private static final String appBarTitle = "Meditation";
+    private static final String appBarTitle = "Exercises";
 
     TextView exerciseTextView;
     TextView exerciseNameTextView;
@@ -107,7 +107,7 @@ public class Meditation extends AppCompatActivity {
 
         mSkipNextButton.setVisibility(View.INVISIBLE);
 
-        getReadyTextView.setText("Get Ready!");
+        getReadyTextView.setText(R.string.getReady);
 
         initialCountDownTimer = new CountDownTimer(4000,1000) {
             @Override
@@ -148,14 +148,14 @@ public class Meditation extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_meditation);
+        setContentView(R.layout.activity_exercises);
 
         exerciseTextView = findViewById(R.id.exerciseTextView);
         exerciseTextView.setText(R.string.exercisePageTitle);
         exerciseNameTextView = findViewById(R.id.exerciseNameTextView);
         countdownExerciseTimerTextView4 = findViewById(R.id.countdownExerciseTextView4);
         exerciseGoButton = findViewById(R.id.exerciseStartButton);
-        exerciseImageView = (ImageView) findViewById(R.id.exerciseImageView);
+        exerciseImageView = findViewById(R.id.exerciseImageView);
         initialCountdownTimerTextView = findViewById(R.id.initialCountdownTextView);
         getReadyTextView = findViewById(R.id.getReadyTextView);
 

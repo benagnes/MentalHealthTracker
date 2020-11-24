@@ -27,17 +27,10 @@ public class MoreResources extends AppCompatActivity {
         Button webSupportButton = findViewById(R.id.webSupportButton);
         webSupportButton.setOnClickListener(v -> openWebSupport());
 
-        Button meditationButton = findViewById(R.id.meditationButton);
-        meditationButton.setOnClickListener(v -> openMeditation());
     }
 
     public void openWebSupport() {
         Intent intent = new Intent(this, WebSupportArticles.class);
-        startActivity(intent);
-    }
-
-    public void openMeditation() {
-        Intent intent = new Intent(this, Meditation.class);
         startActivity(intent);
     }
 }
