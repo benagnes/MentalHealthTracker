@@ -54,7 +54,17 @@
     <string name="yogaInitialTimer">0:45</string>
     <string name="yogaStartButtonText">Start</string>
     <string name="yogaHeaderText">YOGA</string>
+    <string name="yogaGetReadyText">Get Ready!</string>
     <string name="yogaImageContentDescription">Yoga Image Content Description</string>
+
+    <!-- Strings for Exercise Component -->
+    <string name="exercisePageTitle">EXERCISE</string>
+    <string name="exerciseHeaderText">EXERCISE</string>
+    <string name="exerciseStartButtonText">Start</string>
+    <string name="exerciseInitialTimer">0:30</string>
+    <string name="exerciseImageContentDescription">Exercise Image Content Description</string>
+    <string name="exerciseBeginText">START</string>
+    <string name="exerciseCompletionMessage">GREAT JOB!</string>
 
     <!-- Welcome messages -->
     <string name="welcomeMessage_1">Good morning!</string>

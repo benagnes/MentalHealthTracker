@@ -12,12 +12,12 @@
         android:layout_height="355dp"
         android:layout_marginTop="175dp"
         android:layout_marginBottom="176dp"
+        android:contentDescription="@string/yogaImageContentDescription"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/yogaImageContentDescription" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/countdownTextView"
@@ -71,6 +71,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="45dp"
         android:fontFamily="sans-serif-black"
+        android:gravity="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="#2196F3"
         app:layout_constraintBottom_toTopOf="@+id/countdownTextView"
@@ -78,4 +79,62 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/yogaImageView" />
+
+    <TextView
+        android:id="@+id/initialCountdownTextView"
+        android:layout_width="199dp"
+        android:layout_height="167dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+        android:textColor="#070000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/getReadyTextView"
+        android:layout_width="254dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginBottom="6dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="#00090B"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/initialCountdownTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startButton" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/mStepSkipButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="339dp"
+        android:layout_marginLeft="339dp"
+        android:layout_marginTop="132dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="50dp"
+        android:clickable="true"
+        android:contentDescription="@string/mindfulnessSkipButtonContentDesc"
+        android:focusable="true"
+        app:backgroundTint="#6200EE"
+        app:borderWidth="0dp"
+        app:elevation="0dp"
+        app:fabSize="normal"
+        app:hoveredFocusedTranslationZ="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yogaImageView"
+        app:rippleColor="#500CB1"
+        app:srcCompat="@drawable/ic_baseline_arrow_forward_24"
+        app:tint="#FFFFFF" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
