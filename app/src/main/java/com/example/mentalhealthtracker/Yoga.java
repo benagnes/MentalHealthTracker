@@ -25,9 +25,14 @@ public class Yoga extends AppCompatActivity {
     ImageView image;
 
     static int counter = 0;
-    int[] imageIds = {R.mipmap.downwardsdog, R.mipmap.plank, R.mipmap.cobra, R.mipmap.childpose1, R.mipmap.childpose1};
+    int[] imageIds = {R.mipmap.bigtoepose, R.mipmap.intensesidestretch2, R.mipmap.eaglepose3, R.mipmap.tree2,
+            R.mipmap.extendedtriangle2, R.mipmap.highlunge3, R.mipmap.warrior, R.mipmap.lordofdance3,
+            R.mipmap.downwardsdog, R.mipmap.plank, R.mipmap.cobra, R.mipmap.reclininglegstretch,
+            R.mipmap.childpose1, R.mipmap.childpose1};
     int numPoses = imageIds.length;
-    String[] poseNames = {"Downwards Dog", "Plank", "Cobra", "Child's Pose", "Child's Pose"};
+    String[] poseNames = {"Big Toe Pose", "Intense Side Stretch", "Eagle", "Tree",
+            "Extended Triangle", "High Lunge", "Warrior II", "Lord of Dance", "Downwards Dog",
+            "Plank", "Cobra", "Reclining Leg Stretch", "Child's Pose", "Child's Pose"};
 
     // methods
     public void resetTimer() {
@@ -61,7 +66,7 @@ public class Yoga extends AppCompatActivity {
 
         counter = 1;
 
-        countDownTimer = new CountDownTimer(10000, 1000) {
+        countDownTimer = new CountDownTimer(45000, 1000) {
 
             @Override
             public void onTick(long l) {
