@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.Locale;
 
 public class Yoga extends AppCompatActivity {
@@ -23,6 +25,12 @@ public class Yoga extends AppCompatActivity {
     Button goButton;
     CountDownTimer countDownTimer;
     ImageView image;
+    TextView initialCountdownTimerTextView;
+    CountDownTimer initialCountDownTimer;
+    TextView getReadyTextView;
+    FloatingActionButton mSkipNextButton;
+
+    static int initialCounter = 3;
 
     static int counter = 0;
     int[] imageIds = {R.mipmap.bigtoepose, R.mipmap.intensesidestretch2, R.mipmap.eaglepose3, R.mipmap.tree2,
@@ -47,6 +55,7 @@ public class Yoga extends AppCompatActivity {
         }
         else {
             countDownTimer.cancel();
+            mSkipNextButton.setVisibility(View.INVISIBLE);
             poseNameTextView.setText(R.string.yogaCompletionMessage);
             image.setVisibility(View.INVISIBLE);
             timerTextView.setVisibility(View.INVISIBLE);
@@ -56,8 +65,10 @@ public class Yoga extends AppCompatActivity {
         }
     }
 
+    public void startYoga(View view) {
 
-    public void buttonClicked(View view) {
+        mSkipNextButton.setVisibility(View.VISIBLE);
+
         counterIsActive = true;
         goButton.setVisibility(View.INVISIBLE);
 
@@ -80,6 +91,32 @@ public class Yoga extends AppCompatActivity {
                 image.setImageResource(imageIds[counter]);
                 poseNameTextView.setText(poseNames[counter]);
                 resetTimer();
+            }
+        }.start();
+
+    }
+
+
+    public void buttonClicked(View view) {
+
+        mSkipNextButton.setVisibility(View.INVISIBLE);
+        getReadyTextView.setText("Get Ready!");
+
+        initialCountDownTimer = new CountDownTimer(4000,1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                initialCountdownTimerTextView.setText(String.valueOf(initialCounter));
+                initialCounter--;
+            }
+            @Override
+            public void onFinish() {
+                //initialCountdownTimerTextView.setText("Finished");
+                MediaPlayer mediaPlayer1 = MediaPlayer.create(getApplicationContext(), R.raw.beep);
+                mediaPlayer1.start();
+                getReadyTextView.setVisibility(View.INVISIBLE);
+                initialCountdownTimerTextView.setVisibility(View.INVISIBLE);
+                initialCounter = 3;
+                startYoga(view);
             }
         }.start();
     }
@@ -111,6 +148,21 @@ public class Yoga extends AppCompatActivity {
         timerTextView = findViewById(R.id.countdownTextView);
         goButton = findViewById(R.id.startButton);
         image = (ImageView) findViewById(R.id.yogaImageView);
+        initialCountdownTimerTextView = findViewById(R.id.initialCountdownTextView);
+        getReadyTextView = findViewById(R.id.getReadyTextView);
+
+        mSkipNextButton = findViewById(R.id.mStepSkipButton);
+
+        mSkipNextButton.setVisibility(View.INVISIBLE);
+
+        mSkipNextButton.setOnClickListener((l) -> {
+            countDownTimer.cancel();
+            MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.beep);
+            mediaPlayer.start();
+            image.setImageResource(imageIds[counter]);
+            poseNameTextView.setText(poseNames[counter]);
+            resetTimer();
+        });
 
         ActionBar mainActionBar = getSupportActionBar();
 

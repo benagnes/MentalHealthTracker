@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.Locale;
 
 public class Meditation extends AppCompatActivity {
@@ -25,17 +27,24 @@ public class Meditation extends AppCompatActivity {
     CountDownTimer countDownExerciseTimer;
     ImageView exerciseImageView;
 
+    TextView initialCountdownTimerTextView;
+    CountDownTimer initialCountDownTimer;
+    TextView getReadyTextView;
+    FloatingActionButton mSkipNextButton;
+
+    static int initialCounter = 3;
+
     static int exerciseCounter = 0;
     int[] exerciseImageIds = {R.mipmap.jumpingjacks2, R.mipmap.lunge2, R.mipmap.squat3, R.mipmap.pushups3,
             R.mipmap.buttkicks3, R.mipmap.highknees3, R.mipmap.situps, R.mipmap.plank,
-            R.mipmap.burpee, R.mipmap.sidelunge3, R.mipmap.jumpingjacks2, R.mipmap.lunge2,
+            R.mipmap.burpee, R.mipmap.sidelunge3, R.mipmap.round21, R.mipmap.jumpingjacks2, R.mipmap.lunge2,
             R.mipmap.squat3, R.mipmap.pushups3, R.mipmap.buttkicks3, R.mipmap.highknees3,
             R.mipmap.situps, R.mipmap.plank, R.mipmap.burpee, R.mipmap.sidelunge3, R.mipmap.sidelunge3};
 
     int numExercisePoses = exerciseImageIds.length;
     String[] exerciseNames = {"Jumping Jacks", "Lunges", "Squats", "Push Ups",
             "Butt Kickers", "High Knee Running", "Sit Ups", "Plank", "Burpees",
-            "Side Lunges", "Jumping Jacks", "Lunges", "Squats", "Push Ups",
+            "Side Lunges", " ", "Jumping Jacks", "Lunges", "Squats", "Push Ups",
             "Butt Kickers", "High Knee Running", "Sit Ups", "Plank", "Burpees",
             "Side Lunges", "Side Lunges"};
 
@@ -52,6 +61,7 @@ public class Meditation extends AppCompatActivity {
         }
         else {
             countDownExerciseTimer.cancel();
+            mSkipNextButton.setVisibility(View.INVISIBLE);
             exerciseNameTextView.setText(R.string.exerciseCompletionMessage);
             exerciseImageView.setVisibility(View.INVISIBLE);
             countdownExerciseTimerTextView4.setVisibility(View.INVISIBLE);
@@ -61,8 +71,10 @@ public class Meditation extends AppCompatActivity {
         }
     }
 
+    public void startExercise(View view) {
 
-    public void exerciseButtonClicked(View view) {
+        mSkipNextButton.setVisibility(View.VISIBLE);
+
         exerciseCounterIsActive = true;
         exerciseGoButton.setVisibility(View.INVISIBLE);
 
@@ -87,6 +99,34 @@ public class Meditation extends AppCompatActivity {
                 resetTimer();
             }
         }.start();
+
+    }
+
+
+    public void exerciseButtonClicked(View view) {
+
+        mSkipNextButton.setVisibility(View.INVISIBLE);
+
+        getReadyTextView.setText("Get Ready!");
+
+        initialCountDownTimer = new CountDownTimer(4000,1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                initialCountdownTimerTextView.setText(String.valueOf(initialCounter));
+                initialCounter--;
+            }
+            @Override
+            public void onFinish() {
+                //initialCountdownTimerTextView.setText("Finished");
+                MediaPlayer mediaPlayer1 = MediaPlayer.create(getApplicationContext(), R.raw.beep);
+                mediaPlayer1.start();
+                getReadyTextView.setVisibility(View.INVISIBLE);
+                initialCountdownTimerTextView.setVisibility(View.INVISIBLE);
+                initialCounter = 3;
+                startExercise(view);
+            }
+        }.start();
+
     }
 
 
@@ -116,6 +156,21 @@ public class Meditation extends AppCompatActivity {
         countdownExerciseTimerTextView4 = findViewById(R.id.countdownExerciseTextView4);
         exerciseGoButton = findViewById(R.id.exerciseStartButton);
         exerciseImageView = (ImageView) findViewById(R.id.exerciseImageView);
+        initialCountdownTimerTextView = findViewById(R.id.initialCountdownTextView);
+        getReadyTextView = findViewById(R.id.getReadyTextView);
+
+        mSkipNextButton = findViewById(R.id.mStepSkipButton);
+
+        mSkipNextButton.setVisibility(View.INVISIBLE);
+
+        mSkipNextButton.setOnClickListener((l) -> {
+            countDownExerciseTimer.cancel();
+            MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.beep);
+            mediaPlayer.start();
+            exerciseImageView.setImageResource(exerciseImageIds[exerciseCounter]);
+            exerciseNameTextView.setText(exerciseNames[exerciseCounter]);
+            resetTimer();
+        });
 
         ActionBar mainActionBar = getSupportActionBar();
 

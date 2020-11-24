@@ -52,6 +52,7 @@
     <string name="yogaInitialTimer">0:45</string>
     <string name="yogaStartButtonText">Start</string>
     <string name="yogaHeaderText">YOGA</string>
+    <string name="yogaGetReadyText">Get Ready!</string>
     <string name="yogaImageContentDescription">Yoga Image Content Description</string>
 
     <!-- Strings for Exercise Component -->
