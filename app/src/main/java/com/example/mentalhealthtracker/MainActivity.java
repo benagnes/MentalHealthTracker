@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
         mindfulnessButton.setOnClickListener(v -> openMindfulness());
 
         // Button that links to 'Meditation' component
-        Button meditationButton = findViewById(R.id.meditationButton);
-        meditationButton.setOnClickListener(v -> openMeditation());
+        Button exercisesButton = findViewById(R.id.exercisesButton);
+        exercisesButton.setOnClickListener(v -> openExercises());
 
         // Button that links to 'More Resources' component
         Button moreResourcesButton = findViewById(R.id.moreResourcesButton);
@@ -120,8 +120,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openMeditation() {
-        Intent intent = new Intent(this, Meditation.class);
+    public void openExercises() {
+        Intent intent = new Intent(this, Yoga.class);
         startActivity(intent);
     }
 

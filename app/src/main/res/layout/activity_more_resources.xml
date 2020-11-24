@@ -22,10 +22,10 @@
             app:backgroundTint="#4F63D6" />
 
         <Button
-            android:id="@+id/exerciseButton"
+            android:id="@+id/meditationButton"
             android:layout_width="match_parent"
             android:layout_height="72dp"
-            android:text="@string/exercises"
+            android:text="@string/meditation"
             app:backgroundTint="#F1C84D" />
 
         <Button

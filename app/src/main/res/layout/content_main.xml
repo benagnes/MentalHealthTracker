@@ -73,10 +73,10 @@
             app:backgroundTint="#657AED" />
 
         <Button
-            android:id="@+id/meditationButton"
+            android:id="@+id/exercisesButton"
             android:layout_width="match_parent"
             android:layout_height="72dp"
-            android:text="@string/meditation"
+            android:text="@string/exercises"
             app:backgroundTint="#EFBF2E" />
 
         <Button
