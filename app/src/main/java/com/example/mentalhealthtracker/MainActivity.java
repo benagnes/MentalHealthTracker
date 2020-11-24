@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.example.mentalhealthtracker.mindfulness.Mindfulness;
 import com.example.mentalhealthtracker.favourites.EditFavourites;
 import com.example.mentalhealthtracker.mood_tracker.MoodTracker;
+import com.example.mentalhealthtracker.mood_tracker.db.Mood;
 import com.example.mentalhealthtracker.music.PlayMusic;
 
 import java.time.LocalDateTime;
@@ -121,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openExercises() {
-        Intent intent = new Intent(this, Yoga.class);
+        Intent intent = new Intent(this, Exercises.class);
         startActivity(intent);
     }
 
@@ -146,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent2);
                 break;
             case 3:
-                Intent intent3 = new Intent(this, BreathingExercises.class);
+                Intent intent3 = new Intent(this, MoodTracker.class);
                 startActivity(intent3);
                 break;
             default:

@@ -29,7 +29,7 @@
             android:name=".mindfulness.Mindfulness"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".Meditation"
+            android:name=".Exercises"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MoreResources"
