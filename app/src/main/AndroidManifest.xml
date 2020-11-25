@@ -38,6 +38,9 @@
             android:name=".WebSupportArticles"
             android:parentActivityName=".MoreResources" />
         <activity
+            android:name=".ConnectCounsellors"
+            android:parentActivityName=".MoreResources" />
+        <activity
             android:name="com.example.mentalhealthtracker.favourites.EditFavourites"
             android:parentActivityName=".MainActivity" />
         <activity
