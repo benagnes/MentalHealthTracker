@@ -34,6 +34,7 @@ public class ConnectCounsellors extends AppCompatActivity {
         here2talkButton.setVisibility(View.VISIBLE);
         crisisLineButton.setVisibility(View.VISIBLE);
         youthspaceButton.setVisibility(View.VISIBLE);
+        backButton.setVisibility(View.INVISIBLE);
     }
 
 
@@ -50,11 +51,13 @@ public class ConnectCounsellors extends AppCompatActivity {
         resourceInfo = findViewById(R.id.resourceInfoTextView);
         backButton = findViewById(R.id.backButton);
 
+        backButton.setVisibility((View.INVISIBLE));
+
 
         CMHAButton.setText(R.string.cmha);
         CMHAButton.setOnClickListener(v -> {
             hideButtons();
-            //connectCounsellorsInfo.setVisibility(View.INVISIBLE);
+            backButton.setVisibility(View.VISIBLE);
             connectCounsellorsInfo.setText(R.string.cmha);
             resourceInfo.setVisibility(View.VISIBLE);
             resourceInfo.setText(R.string.cmhaResourceInfo);
@@ -64,7 +67,7 @@ public class ConnectCounsellors extends AppCompatActivity {
         here2talkButton.setText(R.string.here2talk);
         here2talkButton.setOnClickListener(v -> {
             hideButtons();
-            //connectCounsellorsInfo.setVisibility(View.INVISIBLE);
+            backButton.setVisibility(View.VISIBLE);
             connectCounsellorsInfo.setText(R.string.here2talk);
             resourceInfo.setVisibility(View.VISIBLE);
             resourceInfo.setText(R.string.here2talkResourceInfo);
@@ -73,7 +76,7 @@ public class ConnectCounsellors extends AppCompatActivity {
         crisisLineButton.setText(R.string.crisisLine);
         crisisLineButton.setOnClickListener(v -> {
             hideButtons();
-            //connectCounsellorsInfo.setVisibility(View.INVISIBLE);
+            backButton.setVisibility(View.VISIBLE);
             connectCounsellorsInfo.setText(R.string.crisisLine);
             resourceInfo.setVisibility(View.VISIBLE);
             resourceInfo.setText(R.string.crisisLineResourceInfo);
@@ -82,7 +85,7 @@ public class ConnectCounsellors extends AppCompatActivity {
         youthspaceButton.setText(R.string.youthspace);
         youthspaceButton.setOnClickListener(v -> {
             hideButtons();
-            //connectCounsellorsInfo.setVisibility(View.INVISIBLE);
+            backButton.setVisibility(View.VISIBLE);
             connectCounsellorsInfo.setText(R.string.youthspace);
             resourceInfo.setVisibility(View.VISIBLE);
             resourceInfo.setText(R.string.youthspaeResourceInfo);
@@ -93,7 +96,6 @@ public class ConnectCounsellors extends AppCompatActivity {
         backButton.setText(R.string.back);
         backButton.setOnClickListener(v -> {
             resourceInfo.setVisibility(View.INVISIBLE);
-            //connectCounsellorsInfo.setVisibility(View.VISIBLE);
             connectCounsellorsInfo.setText(R.string.connectCounsellorsInfoText);
             showButtons();
         });
