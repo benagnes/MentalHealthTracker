@@ -46,7 +46,6 @@ public class MoodTracker extends AppCompatActivity {
     PopupWindow EnergyWindow;
     PopupWindow SocialMeterWindow;
     PopupWindow ProductivityWindow;
-    boolean RecordMoodClick = true;
 
     // methods
     @SuppressLint("SetTextI18n")
