@@ -2,19 +2,19 @@
     <string name="app_name">MentalHealthTracker</string>
     <string name="action_settings">Settings</string>
 
-    <!-- Strings for Home Page -->
+    <!-- Strings for Main and More Resource panels -->
+    <string name="getStarted">Lets Get Started</string>
     <string name="yoga">Yoga</string>
     <string name="playmusic">Play Music</string>
     <string name="moodtracker">Mood Tracker</string>
-    <string name="breathing">Breathing Exercises</string>
+    <string name="breathingexercises">Breathing Exercises</string>
     <string name="mindfulness">Mindfulness</string>
-    <string name="websupport">Web Support Articles</string>
-    <string name="moreresources">More Resources</string>
-    <string name="meditation">Meditation</string>
     <string name="exercises">Exercises</string>
+    <string name="moreresources">More Resources</string>
+    <string name="websupportarticles">Web Support Articles</string>
+    <string name="meditation">Meditation</string>
     <string name="counsellors">Connect with Counsellors</string>
     <string name="statistics">View Statistics</string>
-    <string name="getStarted">Lets Get Started</string>
 
     <!-- Strings used for favourite resources -->
     <string name="favourites">Favourite Resources</string>
@@ -22,9 +22,12 @@
     <string name="favourites2">Favourite 2</string>
     <string name="favourites3">Favourite 3</string>
     <string name="editFav">Edit Favourites</string>
+    <string name="confirmFavs">Confirm Favourites</string>
     <string name="selectFavourite1">Select Favourite 1</string>
     <string name="selectFavourite2">Select Favourite 2</string>
     <string name="selectFavourite3">Select Favourite 3</string>
+    <string name="cancelSelection">Cancel Selection</string>
+    <string name="confirmSelection">Confirm Selection</string>
 
     <!-- Strings used in the PlayMusic activity -->
     <string name="currentlyPlayingThumbnail">currentlyPlayingThumbnail</string>

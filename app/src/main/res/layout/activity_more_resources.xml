@@ -18,7 +18,7 @@
             android:id="@+id/webSupportButton"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:text="@string/websupport"
+            android:text="@string/websupportarticles"
             app:backgroundTint="#4F63D6" />
 
         <Button
