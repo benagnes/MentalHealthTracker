@@ -7,8 +7,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="397dp"
-        android:layout_height="625dp"
+        android:layout_width="394dp"
+        android:layout_height="730dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.478"
@@ -62,8 +62,8 @@
             android:id="@+id/breathingExButton"
             android:layout_width="match_parent"
             android:layout_height="72dp"
-            android:text="@string/breathing"
-            app:backgroundTint="#D5A310" />
+            android:text="@string/breathingexercises"
+            app:backgroundTint="#EDB920" />
 
         <Button
             android:id="@+id/mindfulnessButton"
@@ -87,17 +87,6 @@
             android:textColor="#FFFFFF"
             app:backgroundTint="#3464C5" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="387dp"
-        android:layout_height="89dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
         <TextView
             android:id="@+id/favResources"
             android:layout_width="match_parent"
@@ -112,49 +101,54 @@
             android:id="@+id/linearLayout2"
             style="?android:attr/buttonBarStyle"
             android:layout_width="match_parent"
-            android:layout_height="59dp"
+            android:layout_height="75dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/favourite1Button"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/favourites1"
                 android:textColor="#FAF7F7"
+                android:textSize="12sp"
                 app:backgroundTint="#4256C1" />
 
             <Button
                 android:id="@+id/favourite2Button"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/favourites2"
                 android:textColor="#FAF6F6"
+                android:textSize="12sp"
                 app:backgroundTint="#CC9C0D" />
 
             <Button
                 android:id="@+id/favourite3Button"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/favourites3"
                 android:textColor="#FAF8F8"
+                android:textSize="12sp"
                 app:backgroundTint="#7285F1" />
 
             <Button
                 android:id="@+id/editFavouritesButton"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="79dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/editFav"
                 android:textColor="#FAF8F8"
+                android:textSize="12sp"
                 app:backgroundTint="#EFBA1C" />
         </LinearLayout>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
