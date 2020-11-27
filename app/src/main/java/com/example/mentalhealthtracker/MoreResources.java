@@ -27,10 +27,20 @@ public class MoreResources extends AppCompatActivity {
         Button webSupportButton = findViewById(R.id.webSupportButton);
         webSupportButton.setOnClickListener(v -> openWebSupport());
 
+        // Button that links to 'Connect with Counsellors' component
+        Button connectCounsellorsButton = findViewById(R.id.counsellorsButton);
+        connectCounsellorsButton.setOnClickListener(v -> openConnectCounsellors());
+
     }
 
     public void openWebSupport() {
         Intent intent = new Intent(this, WebSupportArticles.class);
         startActivity(intent);
+    }
+
+
+    public void openConnectCounsellors() {
+        Intent intent2 = new Intent(this, ConnectCounsellors.class);
+        startActivity(intent2);
     }
 }

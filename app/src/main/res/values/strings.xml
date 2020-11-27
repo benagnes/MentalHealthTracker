@@ -129,4 +129,32 @@
     <string name="productive">Productive</string>
     <string name="accomplished">Accomplished A LOT</string>
     <string name="confirmProductivity">Confirm Productivity</string>
+
+    <!-- Strings for Connect with Counsellors component  -->
+    <string name="connectCounsellorsContentDescription">Connect with Counsellors Content Description</string>
+    <string name="connectCounsellorsInfoText">Click on the buttons below to connect with counsellors and get support</string>
+    <string name="back">Back</string>
+    <string name="cmha">Canadian Mental Health Association</string>
+    <string name="cmhaResourceInfo">Visit www.cmha.bc.ca or call 1-800-555-8222
+        for information and community resources on mental health or any mental illness.
+        A free program called Bounce Back helps adults experiencing mild to moderate
+        depression, stress, or anxiety, using self-help materials and coaching.</string>
+    <string name="here2talk">HERE2TALK</string>
+    <string name="here2talkResourceInfo">Here2Talk connects students with mental health support.
+        All students currently registered in a B.C. post-secondary institution have access to free,
+        confidential counselling and community referral services, conveniently available 24/7
+        via app, phone and web. Call Toll Free 1.877.857.3397 or Direct 604.642.5212.
+        The Here2Talk app is available for Apple and Android devices. </string>
+    <string name="crisisLine">Crisis Line and Chat</string>
+    <string name="crisisLineResourceInfo">BCs Distress Phone Services 1-800-784-2433 provide
+        confidential, non-judgmental, free emotional support, 24 hours a day, 7 days a week,
+        in over 140 languages. The Crisis Centre offers one-on-one online chat noon-1am daily
+        and 24/7 access to resources through the Youth in BC program.</string>
+    <string name="youthspace">YOUTHSPACE</string>
+    <string name="youthspaeResourceInfo">Youthspace.ca provides emotional support and crisis
+        intervention service for young people under 30. Youthspace.ca is made up of a community
+        of volunteers who are here to support you - whatever you are going through.
+        Chat online and text (778-783-0177) are available from 6:00pm to midnight every day. </string>
+
+
 </resources>
