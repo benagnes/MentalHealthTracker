@@ -129,4 +129,8 @@
     <string name="productive">Productive</string>
     <string name="accomplished">Accomplished A LOT</string>
     <string name="confirmProductivity">Confirm Productivity</string>
+
+    <!-- Strings for View Statistics -->
+    <string name="resouce">Resource</string>
+    <string name="timesUsed">Times Used</string>
 </resources>

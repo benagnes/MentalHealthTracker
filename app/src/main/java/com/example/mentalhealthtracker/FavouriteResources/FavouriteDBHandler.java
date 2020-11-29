@@ -27,7 +27,6 @@ public class FavouriteDBHandler extends SQLiteOpenHelper {
         String create_table = "CREATE TABLE " + table_name + "(" + column_ID + " INTEGER PRIMARY KEY," +
                 column_Resource + " TEXT" + ")";
         db.execSQL(create_table);
-
     }
 
     @Override
