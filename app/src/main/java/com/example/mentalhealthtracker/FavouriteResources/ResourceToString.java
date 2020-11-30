@@ -3,7 +3,7 @@ package com.example.mentalhealthtracker.FavouriteResources;
 import com.example.mentalhealthtracker.R;
 
 public class ResourceToString {
-    public static int getNameforFavourite(String resource) {
+    public static int getResourceNameFromID(String resource) {
         if (resource.equals(Resources.Yoga.toString())) {
             return R.string.yoga;
         }

@@ -7,15 +7,13 @@ import android.widget.Button;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.mentalhealthtracker.FavouriteResources.Resources;
 import com.example.mentalhealthtracker.Statistics.StatisticsDBHandler;
 
 public class MoreResources extends AppCompatActivity {
     // attributes
     private static final String appBarTitle = "More Resources";
 
-    // Resource statistics database handler and support
-    //private StatisticsDBHandler statisticsDBHandler;
+    private StatisticsDBHandler statisticsDBHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +26,7 @@ public class MoreResources extends AppCompatActivity {
             mainActionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-        //statisticsDBHandler = new StatisticsDBHandler(this, null);
+        statisticsDBHandler = StatisticsDBHandler.getInstance(this);
 
         // Button that links to 'Web Support Articles' component
         Button webSupportButton = findViewById(R.id.webSupportButton);
@@ -49,19 +47,19 @@ public class MoreResources extends AppCompatActivity {
     }
 
     public void openWebSupport() {
-        //statisticsDBHandler.updateHandler(Resources.WebSupportArticles.toString());
+        statisticsDBHandler.updateHandler(R.string.websupportarticles);
         Intent intent = new Intent(this, WebSupportArticles.class);
         startActivity(intent);
     }
 
     public void openMeditation() {
-        //statisticsDBHandler.updateHandler(Resources.Meditation.toString());
+        statisticsDBHandler.updateHandler(R.string.meditation);
         Intent intent = new Intent(this, Meditation.class);
         startActivity(intent);
     }
 
     public void openConnectCounsellors() {
-        //statisticsDBHandler.updateHandler(Resources.ConnectCounsellors.toString());
+        statisticsDBHandler.updateHandler(R.string.counsellors);
         Intent intent = new Intent(this, ConnectCounsellors.class);
         startActivity(intent);
     }

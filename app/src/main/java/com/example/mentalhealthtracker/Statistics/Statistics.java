@@ -3,24 +3,20 @@ package com.example.mentalhealthtracker.Statistics;
 // Object to track the usage of an activity
 public class Statistics {
     // attributes
-    private String Resource;
+    private int ID;
     private int numTimesUsed;
 
     //methods
     public Statistics() {}
 
-    public Statistics(String Resource, int numTimesUsed) {
-        this.Resource = Resource;
+    public Statistics(int ID, int numTimesUsed) {
+        this.ID = ID;
         this.numTimesUsed = numTimesUsed;
     }
 
-    public String getResource() {
-        return Resource;
-    }
+    public int getID() { return ID; }
 
-    public void setResource(String resource) {
-        Resource = resource;
-    }
+    public void setID(int ID) { this.ID = ID; }
 
     public int getNumTimesUsed() {
         return numTimesUsed;
