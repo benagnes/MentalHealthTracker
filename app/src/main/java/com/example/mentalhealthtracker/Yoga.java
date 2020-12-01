@@ -100,7 +100,7 @@ public class Yoga extends AppCompatActivity {
     public void buttonClicked(View view) {
 
         mSkipNextButton.setVisibility(View.INVISIBLE);
-        getReadyTextView.setText("Get Ready!");
+        getReadyTextView.setText(R.string.yogaGetReadyText);
 
         initialCountDownTimer = new CountDownTimer(4000,1000) {
             @Override
@@ -147,7 +147,7 @@ public class Yoga extends AppCompatActivity {
         poseNameTextView = findViewById(R.id.poseNameTextView);
         timerTextView = findViewById(R.id.countdownTextView);
         goButton = findViewById(R.id.startButton);
-        image = (ImageView) findViewById(R.id.yogaImageView);
+        image = findViewById(R.id.yogaImageView);
         initialCountdownTimerTextView = findViewById(R.id.initialCountdownTextView);
         getReadyTextView = findViewById(R.id.getReadyTextView);
 

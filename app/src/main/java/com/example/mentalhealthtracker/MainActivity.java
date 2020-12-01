@@ -21,6 +21,8 @@ import com.example.mentalhealthtracker.FavouriteResources.FavouriteDBHandler;
 import com.example.mentalhealthtracker.FavouriteResources.ResourceToString;
 import com.example.mentalhealthtracker.FavouriteResources.Resources;
 import com.example.mentalhealthtracker.WebSupportArticles.WebSupportArticles;
+import com.example.mentalhealthtracker.Statistics.Statistics;
+import com.example.mentalhealthtracker.Statistics.StatisticsDBHandler;
 import com.example.mentalhealthtracker.mindfulness.Mindfulness;
 import com.example.mentalhealthtracker.mood_tracker.MoodTracker;
 import com.example.mentalhealthtracker.music.PlayMusic;
@@ -43,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     private Resources selectedResource;
 
     // Resource statistics database handler and support
-    //private StatisticsDBHandler statisticsDBHandler;
+    private StatisticsDBHandler statisticsDBHandler;
 
     // methods
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -52,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Initialize favourites db handler and favourite resources support
         favouriteDBhandler = new FavouriteDBHandler(this, null);
         editFavouritesWindow = new PopupWindow(this);
         LinearLayout editFavouriteLayout = new LinearLayout(this);
@@ -60,7 +63,9 @@ public class MainActivity extends AppCompatActivity {
         favouriteToChange = 0;
         selectedResource = null;
 
-        //statisticsDBHandler = new StatisticsDBHandler(this, null);
+        // Initialize statistics db handler and add any missing resources to database
+        statisticsDBHandler = StatisticsDBHandler.getInstance(this);
+        initializeStatisticsDatabase();
 
         // set welcome message based on time of day
         welcomeMsg = findViewById(R.id.welcomeMsg);
@@ -109,17 +114,17 @@ public class MainActivity extends AppCompatActivity {
 
         // get pre-set fav resource or set to default -> set text for button
         if (favourite1 != null) {
-            favourite1Button.setText(ResourceToString.getNameforFavourite(favourite1.getResource()));
+            favourite1Button.setText(ResourceToString.getResourceNameFromID(favourite1.getResource()));
         }
         else { favourite1Button.setText(R.string.playmusic); }
 
         if (favourite2 != null) {
-            favourite2Button.setText(ResourceToString.getNameforFavourite(favourite2.getResource()));
+            favourite2Button.setText(ResourceToString.getResourceNameFromID(favourite2.getResource()));
         }
         else { favourite2Button.setText(R.string.exercises); }
 
         if (favourite3 != null) {
-            favourite3Button.setText(ResourceToString.getNameforFavourite(favourite3.getResource()));
+            favourite3Button.setText(ResourceToString.getResourceNameFromID(favourite3.getResource()));
         }
         else { favourite3Button.setText(R.string.moodtracker); }
 
@@ -194,15 +199,15 @@ public class MainActivity extends AppCompatActivity {
             }
 
             if (favouriteToChange == 1) {
-                favourite1Button.setText(ResourceToString.getNameforFavourite(selectedResource.toString()));
+                favourite1Button.setText(ResourceToString.getResourceNameFromID(selectedResource.toString()));
                 favourite1 = favouriteDBhandler.findHandler(1);
             }
             else if (favouriteToChange == 2) {
-                favourite2Button.setText(ResourceToString.getNameforFavourite(selectedResource.toString()));
+                favourite2Button.setText(ResourceToString.getResourceNameFromID(selectedResource.toString()));
                 favourite2 = favouriteDBhandler.findHandler(2);
             }
             else if (favouriteToChange == 3) {
-                favourite3Button.setText(ResourceToString.getNameforFavourite(selectedResource.toString()));
+                favourite3Button.setText(ResourceToString.getResourceNameFromID(selectedResource.toString()));
                 favourite3 = favouriteDBhandler.findHandler(3);
             }
             confirmFavouriteSelection.setVisibility(View.INVISIBLE);
@@ -297,6 +302,18 @@ public class MainActivity extends AppCompatActivity {
         selectFavouriteWindow.setContentView(selectFavouriteLayout);
     }
 
+    public void initializeStatisticsDatabase() {
+        statisticsDBHandler.addHandler(new Statistics(R.string.yoga, 0));
+        statisticsDBHandler.addHandler(new Statistics(R.string.playmusic, 0));
+        statisticsDBHandler.addHandler(new Statistics(R.string.moodtracker, 0));
+        statisticsDBHandler.addHandler(new Statistics(R.string.breathingexercises, 0));
+        statisticsDBHandler.addHandler(new Statistics(R.string.mindfulness, 0));
+        statisticsDBHandler.addHandler(new Statistics(R.string.exercises, 0));
+        statisticsDBHandler.addHandler(new Statistics(R.string.counsellors, 0));
+        statisticsDBHandler.addHandler(new Statistics(R.string.meditation, 0));
+        statisticsDBHandler.addHandler(new Statistics(R.string.websupportarticles, 0));
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void setWelcomeMsg() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH");
@@ -315,37 +332,37 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openYogaActivity() {
-        //statisticsDBHandler.updateHandler(Resources.Yoga.toString());
+        statisticsDBHandler.updateHandler(R.string.yoga);
         Intent intent = new Intent(this, Yoga.class);
         startActivity(intent);
     }
 
     public void openPlayMusicActivity() {
-        //statisticsDBHandler.updateHandler(Resources.PlayMusic.toString());
+        statisticsDBHandler.updateHandler(R.string.playmusic);
         Intent intent = new Intent(this, PlayMusic.class);
         startActivity(intent);
     }
 
     public void openMoodTracker() {
-        //statisticsDBHandler.updateHandler(Resources.MoodTracker.toString());
+        statisticsDBHandler.updateHandler(R.string.moodtracker);
         Intent intent = new Intent(this, MoodTracker.class);
         startActivity(intent);
     }
 
     public void openBreathingExercises() {
-        //statisticsDBHandler.updateHandler(Resources.BreathingExercises.toString());
+        statisticsDBHandler.updateHandler(R.string.breathingexercises);
         Intent intent = new Intent(this, BreathingExercises.class);
         startActivity(intent);
     }
 
     public void openMindfulness() {
-        //statisticsDBHandler.updateHandler(Resources.Mindfulness.toString());
+        statisticsDBHandler.updateHandler(R.string.mindfulness);
         Intent intent = new Intent(this, Mindfulness.class);
         startActivity(intent);
     }
 
     public void openExercises() {
-        //statisticsDBHandler.updateHandler(Resources.Exercises.toString());
+        statisticsDBHandler.updateHandler(R.string.exercises);
         Intent intent = new Intent(this, Exercises.class);
         startActivity(intent);
     }
@@ -360,11 +377,11 @@ public class MainActivity extends AppCompatActivity {
             case 1:
                 Intent intent;
                 if (favourite1 == null) { // default to Play Music
-                    //statisticsDBHandler.updateHandler(Resources.PlayMusic.toString());
+                    statisticsDBHandler.updateHandler(R.string.playmusic);
                     intent = new Intent(this, PlayMusic.class);
                 }
                 else {
-                    //statisticsDBHandler.updateHandler(favourite1.getResource());
+                    statisticsDBHandler.updateHandler(ResourceToString.getResourceNameFromID(favourite1.getResource()));
                     Class<?> fav1 = StringtoActivity(favourite1.getResource());
                     intent = new Intent(this, fav1);
                 }
@@ -373,11 +390,11 @@ public class MainActivity extends AppCompatActivity {
             case 2:
                 Intent intent2;
                 if (favourite2 == null) {
-                    //statisticsDBHandler.updateHandler(Resources.Exercises.toString());
+                    statisticsDBHandler.updateHandler(R.string.exercises);
                     intent2 = new Intent(this, Exercises.class);
                 }
                 else {
-                    //statisticsDBHandler.updateHandler(favourite2.getResource());
+                    statisticsDBHandler.updateHandler(ResourceToString.getResourceNameFromID(favourite2.getResource()));
                     Class<?> fav2 = StringtoActivity(favourite2.getResource());
                     intent2 = new Intent(this, fav2);
                 }
@@ -386,11 +403,11 @@ public class MainActivity extends AppCompatActivity {
             case 3:
                 Intent intent3;
                 if (favourite3 == null) {
-                    //statisticsDBHandler.updateHandler(Resources.MoodTracker.toString());
+                    statisticsDBHandler.updateHandler(R.string.moodtracker);
                     intent3 = new Intent(this, MoodTracker.class);
                 }
                 else {
-                    //statisticsDBHandler.updateHandler(favourite3.getResource());
+                    statisticsDBHandler.updateHandler(ResourceToString.getResourceNameFromID(favourite3.getResource()));
                     Class<?> fav3 = StringtoActivity(favourite3.getResource());
                     intent3 = new Intent(this, fav3);
                 }
@@ -435,42 +452,6 @@ public class MainActivity extends AppCompatActivity {
             return null;
         }
     }
-
-    /*public int getNameforFavourite(String resource) {
-        if (resource.equals(Resources.Yoga.toString())) {
-            return R.string.yoga;
-        }
-        else if (resource.equals(Resources.PlayMusic.toString())) {
-            return R.string.playmusic;
-        }
-        else if (resource.equals(Resources.MoodTracker.toString())) {
-            return R.string.moodtracker;
-        }
-        else if (resource.equals(Resources.BreathingExercises.toString())) {
-            return R.string.breathingexercises;
-        }
-        else if (resource.equals(Resources.Mindfulness.toString())) {
-            return R.string.mindfulness;
-        }
-        else if (resource.equals(Resources.Exercises.toString())) {
-            return R.string.exercises;
-        }
-        else if (resource.equals(Resources.WebSupportArticles.toString())) {
-            return R.string.websupportarticles;
-        }
-        else if (resource.equals(Resources.Meditation.toString())) {
-            return R.string.meditation;
-        }
-        else if (resource.equals(Resources.ConnectCounsellors.toString())) {
-            return R.string.counsellors;
-        }
-        else if (resource.equals(Resources.ViewStatistics.toString())) {
-            return R.string.statistics;
-        }
-        else {
-            return -1;
-        }
-    }*/
 
     // When the app stops, close the DB connection and dismiss any open pop-up windows
     @Override
