@@ -131,6 +131,9 @@
     <string name="confirmProductivity">Confirm Productivity</string>
 
     <!-- Strings for View Statistics -->
-    <string name="resouce">Resource</string>
-    <string name="timesUsed">Times Used</string>
+    <string name="ResourceHeader">Resource:</string>
+    <string name="TimesUsedHeader">Times Used:</string>
+    <string name="cancelResetAllStats">Cancel Reset All Statistics</string>
+    <string name="confirmResetAllStats">Confirm Reset All Statistics</string>
+    <string name="resetAllStats">Reset All Statistics</string>
 </resources>
