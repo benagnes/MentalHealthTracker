@@ -142,5 +142,24 @@
         app:srcCompat="@drawable/ic_baseline_arrow_forward_24"
         app:tint="#FFFFFF" />
 
+<!--    <Button-->
+<!--        android:id="@+id/restrtButton"-->
+<!--        android:layout_width="99dp"-->
+<!--        android:layout_height="55dp"-->
+<!--        android:layout_marginStart="31dp"-->
+<!--        android:layout_marginLeft="31dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginEnd="20dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:layout_marginBottom="21dp"-->
+<!--        android:onClick="restartButtonClicked"-->
+<!--        android:text="@string/yogaRestartButtonText"-->
+<!--        android:textColor="#FFFFFF"-->
+<!--        app:backgroundTint="#562C9F"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/yogaImageView"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/startButton"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/yogaTextView" />-->
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
