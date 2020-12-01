@@ -20,7 +20,7 @@ import com.example.mentalhealthtracker.FavouriteResources.Favourite;
 import com.example.mentalhealthtracker.FavouriteResources.FavouriteDBHandler;
 import com.example.mentalhealthtracker.FavouriteResources.ResourceToString;
 import com.example.mentalhealthtracker.FavouriteResources.Resources;
-import com.example.mentalhealthtracker.Statistics.StatisticsDBHandler;
+import com.example.mentalhealthtracker.WebSupportArticles.WebSupportArticles;
 import com.example.mentalhealthtracker.mindfulness.Mindfulness;
 import com.example.mentalhealthtracker.mood_tracker.MoodTracker;
 import com.example.mentalhealthtracker.music.PlayMusic;
