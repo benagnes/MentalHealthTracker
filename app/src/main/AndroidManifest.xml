@@ -47,7 +47,13 @@
             android:parentActivityName=".WebSupportArticles.WebSupportArticleView"
             />
         <activity
-            android:name=".MainActivity"
+            android:name=".ConnectCounsellors"
+            android:parentActivityName=".MoreResources" />
+<!--        <activity-->
+<!--            android:name="com.example.mentalhealthtracker.favourites.EditFavourites"-->
+<!--            android:parentActivityName=".MainActivity" />-->
+        <activity
+            android:name="com.example.mentalhealthtracker.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.MentalHealthTracker.NoActionBar">
             <intent-filter>
@@ -61,9 +67,6 @@
             android:parentActivityName=".mindfulness.Mindfulness" />
         <activity
             android:name=".Meditation"
-            android:parentActivityName=".MoreResources" />
-        <activity
-            android:name=".ConnectCounsellors"
             android:parentActivityName=".MoreResources" />
         <activity
             android:name=".ViewStatistics"
