@@ -156,5 +156,10 @@
         of volunteers who are here to support you - whatever you are going through.
         Chat online and text (778-783-0177) are available from 6:00pm to midnight every day. </string>
 
-
+    <!-- Strings for View Statistics -->
+    <string name="ResourceHeader">Resource:</string>
+    <string name="TimesUsedHeader">Times Used:</string>
+    <string name="cancelResetAllStats">Cancel Reset All Statistics</string>
+    <string name="confirmResetAllStats">Confirm Reset All Statistics</string>
+    <string name="resetAllStats">Reset All Statistics</string>
 </resources>

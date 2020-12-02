@@ -37,7 +37,6 @@ public class ConnectCounsellors extends AppCompatActivity {
         backButton.setVisibility(View.INVISIBLE);
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,15 +99,10 @@ public class ConnectCounsellors extends AppCompatActivity {
             showButtons();
         });
 
-
         ActionBar mainActionBar = getSupportActionBar();
-
         if (mainActionBar != null) {
             mainActionBar.setTitle(appBarTitle);
             mainActionBar.setDisplayHomeAsUpEnabled(true);
         }
-
-
     }
-
 }
