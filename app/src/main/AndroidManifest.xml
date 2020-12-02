@@ -51,8 +51,16 @@
         </activity>
         <activity
             android:name=".mindfulness.MindfulnessInteractive"
-            android:parentActivityName=".mindfulness.Mindfulness"
-            />
+            android:parentActivityName=".mindfulness.Mindfulness" />
+        <activity
+            android:name=".Meditation"
+            android:parentActivityName=".MoreResources"/>
+        <activity
+            android:name=".ConnectCounsellors"
+            android:parentActivityName=".MoreResources"/>
+        <activity
+            android:name=".ViewStatistics"
+            android:parentActivityName=".MoreResources"/>
     </application>
 
 </manifest>
