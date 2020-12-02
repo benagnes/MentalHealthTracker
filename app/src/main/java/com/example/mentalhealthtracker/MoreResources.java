@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mentalhealthtracker.WebSupportArticles.WebSupportArticles;
 import com.example.mentalhealthtracker.Statistics.StatisticsDBHandler;
+import com.example.mentalhealthtracker.meditation.Meditation;
 
 public class MoreResources extends AppCompatActivity {
     // attributes

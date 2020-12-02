@@ -52,6 +52,7 @@
             android:theme="@style/Theme.MentalHealthTracker.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -59,8 +60,11 @@
             android:name=".mindfulness.MindfulnessInteractive"
             android:parentActivityName=".mindfulness.Mindfulness" />
         <activity
-            android:name=".Meditation"
-            android:parentActivityName=".MoreResources"/>
+            android:name=".meditation.Meditation"
+            android:parentActivityName=".MoreResources" />
+        <activity
+            android:name=".meditation.MeditationPlayer"
+            android:parentActivityName=".meditation.Meditation" />
         <activity
             android:name=".ConnectCounsellors"
             android:parentActivityName=".MoreResources" />
