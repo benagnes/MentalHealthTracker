@@ -35,14 +35,17 @@
             android:name=".MoreResources"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".WebSupportArticles"
+            android:name=".WebSupportArticles.WebSupportArticles"
             android:parentActivityName=".MoreResources" />
         <activity
-            android:name=".ConnectCounsellors"
-            android:parentActivityName=".MoreResources" />
-<!--        <activity-->
-<!--            android:name="com.example.mentalhealthtracker.favourites.EditFavourites"-->
-<!--            android:parentActivityName=".MainActivity" />-->
+            android:name=".WebSupportArticles.WebSupportArticleView"
+            android:parentActivityName=".WebSupportArticles.WebSupportArticles"
+            android:launchMode="singleTop"
+            />
+        <activity
+            android:name=".WebSupportArticles.WebSupportArticleDisplay"
+            android:parentActivityName=".WebSupportArticles.WebSupportArticleView"
+            />
         <activity
             android:name="com.example.mentalhealthtracker.MainActivity"
             android:label="@string/app_name"
@@ -61,8 +64,10 @@
             android:parentActivityName=".MoreResources" />
         <activity
             android:name=".meditation.MeditationPlayer"
-            android:parentActivityName=".meditation.Meditation"
-            />
+            android:parentActivityName=".meditation.Meditation" />
+        <activity
+            android:name=".ConnectCounsellors"
+            android:parentActivityName=".MoreResources" />
         <activity
             android:name=".ViewStatistics"
             android:parentActivityName=".MoreResources" />
