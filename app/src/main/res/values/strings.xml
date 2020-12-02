@@ -136,4 +136,13 @@
     <string name="cancelResetAllStats">Cancel Reset All Statistics</string>
     <string name="confirmResetAllStats">Confirm Reset All Statistics</string>
     <string name="resetAllStats">Reset All Statistics</string>
+
+    <!-- Strings for Meditation -->
+    <string name="meditation_routine_title">Meditation Routine Title</string>
+    <string name="routine_description">Routine Description</string>
+    <string name="meditation_skip_step_button">Meditation Skip Step Button</string>
+    <string name="meditation_helper_image">Meditation Helper Image</string>
+    <string name="meditation_step_title">Meditation Step Title</string>
+    <string name="meditation_step_description">Meditation step description</string>
+    <string name="meditation_time_default">0:00</string>
 </resources>
