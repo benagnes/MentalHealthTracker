@@ -44,7 +44,6 @@ public class MoreResources extends AppCompatActivity {
         // Button that links to 'View Statistics' component
         Button statisticsButton = findViewById(R.id.statisticsButton);
         statisticsButton.setOnClickListener(v -> openStatistics());
-
     }
 
     public void openWebSupport() {
