@@ -29,6 +29,7 @@ public class Yoga extends AppCompatActivity {
     CountDownTimer initialCountDownTimer;
     TextView getReadyTextView;
     FloatingActionButton mSkipNextButton;
+    MediaPlayer mediaPlayer1;
 
     static int initialCounter = 3;
 
@@ -55,19 +56,29 @@ public class Yoga extends AppCompatActivity {
         }
         else {
             countDownTimer.cancel();
-            mSkipNextButton.setVisibility(View.INVISIBLE);
             poseNameTextView.setText(R.string.yogaCompletionMessage);
             image.setVisibility(View.INVISIBLE);
             timerTextView.setVisibility(View.INVISIBLE);
+            mSkipNextButton.setVisibility(View.INVISIBLE);
+            goButton.setVisibility(View.VISIBLE);
 
             // Reset the counter when we're at the end
             counter = 0;
+
+            if (mediaPlayer1 != null) {
+                mediaPlayer1.release();
+            }
         }
     }
 
-    public void startYoga(View view) {
-
+    public void startYoga() {
+        image.setVisibility(View.VISIBLE);
+        timerTextView.setVisibility(View.VISIBLE);
+        poseNameTextView.setVisibility(View.VISIBLE);
+        getReadyTextView.setVisibility(View.INVISIBLE);
+        initialCountdownTimerTextView.setVisibility(View.INVISIBLE);
         mSkipNextButton.setVisibility(View.VISIBLE);
+        poseNameTextView.setVisibility(View.VISIBLE);
 
         counterIsActive = true;
         goButton.setVisibility(View.INVISIBLE);
@@ -96,11 +107,11 @@ public class Yoga extends AppCompatActivity {
 
     }
 
-
-    public void buttonClicked(View view) {
-
-        mSkipNextButton.setVisibility(View.INVISIBLE);
+    public void buttonClicked() {
         getReadyTextView.setText(R.string.yogaGetReadyText);
+        getReadyTextView.setVisibility(View.VISIBLE);
+        initialCountdownTimerTextView.setVisibility(View.VISIBLE);
+        poseNameTextView.setVisibility(View.INVISIBLE);
 
         initialCountDownTimer = new CountDownTimer(4000,1000) {
             @Override
@@ -110,17 +121,15 @@ public class Yoga extends AppCompatActivity {
             }
             @Override
             public void onFinish() {
-                //initialCountdownTimerTextView.setText("Finished");
-                MediaPlayer mediaPlayer1 = MediaPlayer.create(getApplicationContext(), R.raw.beep);
+                mediaPlayer1 = MediaPlayer.create(getApplicationContext(), R.raw.beep);
                 mediaPlayer1.start();
                 getReadyTextView.setVisibility(View.INVISIBLE);
                 initialCountdownTimerTextView.setVisibility(View.INVISIBLE);
                 initialCounter = 3;
-                startYoga(view);
+                startYoga();
             }
         }.start();
     }
-
 
     public void updateTimer(int secondsLeft) {
         int minutes = secondsLeft / 60;
@@ -136,7 +145,6 @@ public class Yoga extends AppCompatActivity {
                 secondString));
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -146,15 +154,15 @@ public class Yoga extends AppCompatActivity {
         yogaTextView.setText(R.string.yogaPageTitle);
         poseNameTextView = findViewById(R.id.poseNameTextView);
         timerTextView = findViewById(R.id.countdownTextView);
-        goButton = findViewById(R.id.startButton);
         image = findViewById(R.id.yogaImageView);
         initialCountdownTimerTextView = findViewById(R.id.initialCountdownTextView);
         getReadyTextView = findViewById(R.id.getReadyTextView);
 
+        goButton = findViewById(R.id.startButton);
+        goButton.setOnClickListener(v -> buttonClicked());
+
         mSkipNextButton = findViewById(R.id.mStepSkipButton);
-
         mSkipNextButton.setVisibility(View.INVISIBLE);
-
         mSkipNextButton.setOnClickListener((l) -> {
             countDownTimer.cancel();
             MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.beep);
@@ -165,13 +173,11 @@ public class Yoga extends AppCompatActivity {
         });
 
         ActionBar mainActionBar = getSupportActionBar();
-
         if (mainActionBar != null) {
             mainActionBar.setTitle(appBarTitle);
             mainActionBar.setDisplayHomeAsUpEnabled(true);
         }
     }
-
 
     @Override
     protected void onStop() {
@@ -180,12 +186,11 @@ public class Yoga extends AppCompatActivity {
             countDownTimer.cancel();
         counter = 0;
 
+        if (mediaPlayer1 != null) {
+            mediaPlayer1.release();
+        }
+
         super.onStop();
     }
-
-
 }
-
-
-
 

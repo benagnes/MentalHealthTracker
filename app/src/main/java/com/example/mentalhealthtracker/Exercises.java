@@ -31,6 +31,7 @@ public class Exercises extends AppCompatActivity {
     CountDownTimer initialCountDownTimer;
     TextView getReadyTextView;
     FloatingActionButton mSkipNextButton;
+    MediaPlayer mediaPlayer1;
 
     static int initialCounter = 3;
 
@@ -68,6 +69,9 @@ public class Exercises extends AppCompatActivity {
 
             // Reset the counter when we're at the end
             exerciseCounter = 0;
+
+            mediaPlayer1.reset();
+            mediaPlayer1.release();
         }
     }
 
@@ -118,7 +122,7 @@ public class Exercises extends AppCompatActivity {
             @Override
             public void onFinish() {
                 //initialCountdownTimerTextView.setText("Finished");
-                MediaPlayer mediaPlayer1 = MediaPlayer.create(getApplicationContext(), R.raw.beep);
+                mediaPlayer1 = MediaPlayer.create(getApplicationContext(), R.raw.beep);
                 mediaPlayer1.start();
                 getReadyTextView.setVisibility(View.INVISIBLE);
                 initialCountdownTimerTextView.setVisibility(View.INVISIBLE);
@@ -186,6 +190,9 @@ public class Exercises extends AppCompatActivity {
         if (countDownExerciseTimer != null)
             countDownExerciseTimer.cancel();
         exerciseCounter = 0;
+
+        mediaPlayer1.reset();
+        mediaPlayer1.release();
 
         super.onStop();
     }

@@ -59,6 +59,7 @@
     <string name="yogaHeaderText">YOGA</string>
     <string name="yogaGetReadyText">Get Ready!</string>
     <string name="yogaImageContentDescription">Yoga Image Content Description</string>
+    <string name="yogaRestartButtonText">Restart</string>
 
     <!-- Strings for Exercise Component -->
     <string name="exercisePageTitle">EXERCISE</string>
@@ -90,6 +91,8 @@
 
     <!-- Strings for Breathing Exercises component  -->
     <string name="breathingExerciseCheckboxTitle">CheckBox</string>
+    <string name="next">Next</string>
+    <string name="focusedBreathing">Focused Breathing</string>
 
     <!-- Strings for Mood Tracker Component  -->
     <string name="welcomeToMoodTracker">Welcome to Mood Tracker</string>
