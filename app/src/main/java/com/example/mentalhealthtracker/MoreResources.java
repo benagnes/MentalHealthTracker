@@ -7,6 +7,7 @@ import android.widget.Button;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mentalhealthtracker.WebSupportArticles.WebSupportArticles;
 import com.example.mentalhealthtracker.Statistics.StatisticsDBHandler;
 
 public class MoreResources extends AppCompatActivity {

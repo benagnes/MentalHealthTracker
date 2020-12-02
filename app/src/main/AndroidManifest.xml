@@ -20,8 +20,8 @@
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.example.mentalhealthtracker.mood_tracker.MoodTracker"
-            android:parentActivityName=".MainActivity"/>
+            android:name=".mood_tracker.MoodTracker"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".BreathingExercises"
             android:parentActivityName=".MainActivity" />
@@ -35,8 +35,17 @@
             android:name=".MoreResources"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".WebSupportArticles"
+            android:name=".WebSupportArticles.WebSupportArticles"
             android:parentActivityName=".MoreResources" />
+        <activity
+            android:name=".WebSupportArticles.WebSupportArticleView"
+            android:parentActivityName=".WebSupportArticles.WebSupportArticles"
+            android:launchMode="singleTop"
+            />
+        <activity
+            android:name=".WebSupportArticles.WebSupportArticleDisplay"
+            android:parentActivityName=".WebSupportArticles.WebSupportArticleView"
+            />
         <activity
             android:name="com.example.mentalhealthtracker.MainActivity"
             android:label="@string/app_name"
@@ -57,7 +66,7 @@
             android:parentActivityName=".MoreResources" />
         <activity
             android:name=".ViewStatistics"
-            android:parentActivityName=".MoreResources"/>
+            android:parentActivityName=".MoreResources" />
     </application>
 
 </manifest>
