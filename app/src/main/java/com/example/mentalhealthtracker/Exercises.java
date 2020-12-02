@@ -54,7 +54,6 @@ public class Exercises extends AppCompatActivity {
         countdownExerciseTimerTextView4.setText(R.string.exerciseInitialTimer);
         exerciseGoButton.setText(R.string.exerciseBeginText);
         exerciseCounterIsActive = false;
-
         exerciseCounter++;
 
         if (exerciseCounter < numExercisePoses) {
@@ -66,25 +65,29 @@ public class Exercises extends AppCompatActivity {
             exerciseNameTextView.setText(R.string.exerciseCompletionMessage);
             exerciseImageView.setVisibility(View.INVISIBLE);
             countdownExerciseTimerTextView4.setVisibility(View.INVISIBLE);
+            exerciseGoButton.setVisibility(View.VISIBLE);
 
             // Reset the counter when we're at the end
             exerciseCounter = 0;
 
-            mediaPlayer1.reset();
-            mediaPlayer1.release();
+            if (mediaPlayer1 != null) {
+                mediaPlayer1.reset();
+                mediaPlayer1.release();
+            }
         }
     }
 
-    public void startExercise(View view) {
-
+    public void startExercise() {
         mSkipNextButton.setVisibility(View.VISIBLE);
-
         exerciseCounterIsActive = true;
-        exerciseGoButton.setVisibility(View.INVISIBLE);
+        exerciseImageView.setVisibility(View.VISIBLE);
+        exerciseNameTextView.setVisibility(View.VISIBLE);
+        getReadyTextView.setVisibility(View.INVISIBLE);
+        initialCountdownTimerTextView.setVisibility(View.INVISIBLE);
+        countdownExerciseTimerTextView4.setVisibility(View.VISIBLE);
 
         exerciseImageView.setImageResource(exerciseImageIds[exerciseCounter]);
         exerciseNameTextView.setText(exerciseNames[exerciseCounter]);
-
         exerciseCounter = 1;
 
         countDownExerciseTimer = new CountDownTimer(30000, 1000) {
@@ -103,15 +106,17 @@ public class Exercises extends AppCompatActivity {
                 resetTimer();
             }
         }.start();
-
     }
 
-
-    public void exerciseButtonClicked(View view) {
-
+    public void exerciseButtonClicked() {
         mSkipNextButton.setVisibility(View.INVISIBLE);
-
         getReadyTextView.setText(R.string.getReady);
+        exerciseGoButton.setVisibility(View.INVISIBLE);
+        exerciseImageView.setVisibility(View.INVISIBLE);
+        exerciseNameTextView.setVisibility(View.INVISIBLE);
+        countdownExerciseTimerTextView4.setVisibility(View.INVISIBLE);
+        getReadyTextView.setVisibility(View.VISIBLE);
+        initialCountdownTimerTextView.setVisibility(View.VISIBLE);
 
         initialCountDownTimer = new CountDownTimer(4000,1000) {
             @Override
@@ -127,12 +132,10 @@ public class Exercises extends AppCompatActivity {
                 getReadyTextView.setVisibility(View.INVISIBLE);
                 initialCountdownTimerTextView.setVisibility(View.INVISIBLE);
                 initialCounter = 3;
-                startExercise(view);
+                startExercise();
             }
         }.start();
-
     }
-
 
     public void updateTimer(int secondsLeft) {
         int minutes = secondsLeft / 60;
@@ -148,7 +151,6 @@ public class Exercises extends AppCompatActivity {
                 secondString));
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -162,12 +164,12 @@ public class Exercises extends AppCompatActivity {
         exerciseImageView = findViewById(R.id.exerciseImageView);
         initialCountdownTimerTextView = findViewById(R.id.initialCountdownTextView);
         getReadyTextView = findViewById(R.id.getReadyTextView);
-
         mSkipNextButton = findViewById(R.id.mStepSkipButton);
 
-        mSkipNextButton.setVisibility(View.INVISIBLE);
+        exerciseGoButton.setOnClickListener(v -> exerciseButtonClicked());
 
-        mSkipNextButton.setOnClickListener((l) -> {
+        mSkipNextButton.setVisibility(View.INVISIBLE);
+        mSkipNextButton.setOnClickListener(v -> {
             countDownExerciseTimer.cancel();
             MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.beep);
             mediaPlayer.start();
@@ -177,7 +179,6 @@ public class Exercises extends AppCompatActivity {
         });
 
         ActionBar mainActionBar = getSupportActionBar();
-
         if (mainActionBar != null) {
             mainActionBar.setTitle(appBarTitle);
             mainActionBar.setDisplayHomeAsUpEnabled(true);
@@ -191,8 +192,9 @@ public class Exercises extends AppCompatActivity {
             countDownExerciseTimer.cancel();
         exerciseCounter = 0;
 
-        mediaPlayer1.reset();
-        mediaPlayer1.release();
+        if (mediaPlayer1 != null) {
+            mediaPlayer1.release();
+        }
 
         super.onStop();
     }
