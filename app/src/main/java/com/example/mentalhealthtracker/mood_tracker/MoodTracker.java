@@ -14,8 +14,6 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.example.mentalhealthtracker.R;
-import com.example.mentalhealthtracker.mood_tracker.db.Mood;
-import com.example.mentalhealthtracker.mood_tracker.db.MoodDBhandler;
 
 public class MoodTracker extends AppCompatActivity {
     // attributes
@@ -379,7 +377,7 @@ public class MoodTracker extends AppCompatActivity {
         }
     }
 
-    public boolean addMood() { // TO-DO: Error handing if add/update fails?
+    public boolean addMood() {
         boolean success;
         if (isMoodRecordedForSelectedDate()) {
             success = DBhandler.updateHandler(dateInt, entered_mood,
@@ -413,14 +411,6 @@ public class MoodTracker extends AppCompatActivity {
     public boolean isMoodRecordedForSelectedDate() {
         Mood mood = DBhandler.findHandler(selected_date);
         return mood != null;
-    }
-
-    public void getAllRecordings() {
-        System.out.println(DBhandler.loadHandler());
-    }
-
-    public void deleteRecording() {
-        DBhandler.deleteHandler(selected_date);
     }
 
     // When the app stops, close the DB connection and dismiss any open pop-up windows

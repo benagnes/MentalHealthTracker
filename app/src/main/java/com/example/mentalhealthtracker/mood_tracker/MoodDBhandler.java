@@ -1,4 +1,4 @@
-package com.example.mentalhealthtracker.mood_tracker.db;
+package com.example.mentalhealthtracker.mood_tracker;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -7,6 +7,8 @@ import android.content.ContentValues;
 import android.database.Cursor;
 
 import androidx.annotation.Nullable;
+
+import com.example.mentalhealthtracker.mood_tracker.Mood;
 
 // Handler to communicate with Mood Tracker database
 public class MoodDBhandler extends SQLiteOpenHelper {

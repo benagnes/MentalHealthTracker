@@ -32,7 +32,6 @@ public class BreathingExercises extends AppCompatActivity {
             "Imagine peace and tranquility", "Let go of stress and anxiety",
             "Hope you feel relaxed and rejuvenated"};
 
-
     // methods
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,17 +41,14 @@ public class BreathingExercises extends AppCompatActivity {
         breathingStateTextView = findViewById(R.id.breatheStateTextView);
         breathingImages = (ImageView) findViewById(R.id.breathingImageView);
         breathingInfoTextView = findViewById(R.id.breathingInstructionTextView);
+
         nextButton = findViewById(R.id.nextButton);
-
-
         nextButton.setText(R.string.next);
         nextButton.setOnClickListener(v -> {
-
             breathingImages.setImageResource(imageIds[counter]);
             breathingStateTextView.setText(stepsIds[counter]);
             breathingInfoTextView.setText(instructionIds[counter]);
             counter++;
-
             if (counter == numSteps) {
                 nextButton.setVisibility(View.INVISIBLE);
                 counter = 0;
@@ -60,7 +56,6 @@ public class BreathingExercises extends AppCompatActivity {
         });
 
         ActionBar mainActionBar = getSupportActionBar();
-
         if (mainActionBar != null) {
             mainActionBar.setTitle(appBarTitle);
             mainActionBar.setDisplayHomeAsUpEnabled(true);

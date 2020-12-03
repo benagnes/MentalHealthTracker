@@ -1,4 +1,4 @@
-package com.example.mentalhealthtracker.mood_tracker.db;
+package com.example.mentalhealthtracker.mood_tracker;
 
 // Mood object to store user moods in database
 public class Mood {
