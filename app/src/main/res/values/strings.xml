@@ -110,7 +110,7 @@
     <string name="confirmMood">Confirm Mood</string>
 
     <string name="energy">Energy</string>
-    <string name="sleepEnergy">I want to sleep</string>
+    <string name="sleepEnergy">Sleepy</string>
     <string name="lowEnergy">Low</string>
     <string name="normalEnergy">Normal</string>
     <string name="highEnergy">High</string>
