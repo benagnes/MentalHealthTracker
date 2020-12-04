@@ -5,16 +5,27 @@
     <!-- Strings for Main and More Resource panels -->
     <string name="getStarted">Lets Get Started</string>
     <string name="yoga">Yoga</string>
+    <string name="yogaDescription">A guided Yoga routine to calm the mind and improve flexibility</string>
     <string name="playmusic">Play Music</string>
+    <string name="musicDescription">Listen to relaxing music</string>
     <string name="moodtracker">Mood Tracker</string>
+    <string name="moodtrackerDescription">Track your mood, energy, social meter, and productivity</string>
     <string name="breathingexercises">Breathing Exercises</string>
+    <string name="breathingexercisesDescription">Guided breathing exercises to help relieve stress</string>
     <string name="mindfulness">Mindfulness</string>
+    <string name="mindfulnessDescription">Improve your mental concentration and awareness</string>
     <string name="exercises">Exercises</string>
+    <string name="exercisesDescription">Guided exercises to improve strength and fitness</string>
     <string name="moreresources">More Resources</string>
+    <string name="moreresourcesDescription">Access additional activities and resources</string>
     <string name="websupportarticles">Web Support Articles</string>
+    <string name="websupportarticlesDescription">A collection of articles on improving mental health and controlling emotions</string>
     <string name="meditation">Meditation</string>
+    <string name="meditationDescription">A guided meditation routine to improve the mind, heart, and body</string>
     <string name="counsellors">Connect with Counsellors</string>
-    <string name="statistics">View Statistics</string>
+    <string name="counsellorsDescription">Information on and hotlines to connect with mental health services and counsellors</string>
+    <string name="statistics">Statistics</string>
+    <string name="statisticsDescription">View usage statistics on app resources</string>
 
     <!-- Strings used for favourite resources -->
     <string name="favourites">Favourite Resources</string>
