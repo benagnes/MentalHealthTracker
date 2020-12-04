@@ -7,8 +7,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="394dp"
-        android:layout_height="730dp"
+        android:layout_width="384dp"
+        android:layout_height="726dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.478"
@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:autofillHints="@string/app_name"
-            android:background="#5C73EF"
+            android:background="#677CF4"
             android:clickable="false"
             android:gravity="center"
             android:hint="@string/app_name"
@@ -30,68 +30,178 @@
             android:id="@+id/letsGetStarted"
             android:layout_width="match_parent"
             android:layout_height="54dp"
-            android:background="#C5B314"
+            android:background="#F4C63B"
             android:gravity="center"
             android:text="@string/getStarted"
             android:textColor="@color/white"
             android:textSize="24sp" />
 
-        <Button
-            android:id="@+id/yogaButton"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="72dp"
-            android:text="@string/yoga"
-            app:backgroundTint="#6F66EF" />
+            android:orientation="horizontal"
+            android:weightSum="2">
 
-        <Button
-            android:id="@+id/playMusicButton"
-            android:layout_width="match_parent"
-            android:layout_height="72dp"
-            android:text="@string/playmusic"
-            android:textColor="#FFFFFF"
-            app:backgroundTint="#E8C516"
-            app:layout_constraintTop_toBottomOf="@+id/welcomeMsg" />
+            <Button
+                android:id="@+id/yogaButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/yoga"
+                app:backgroundTint="#677CF4" />
 
-        <Button
-            android:id="@+id/moodTrackerButton"
-            android:layout_width="match_parent"
-            android:layout_height="72dp"
-            android:text="@string/moodtracker" />
+            <TextView
+                android:id="@+id/YogaInfo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/yogaDescription" />
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/breathingExButton"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="72dp"
-            android:text="@string/breathingexercises"
-            app:backgroundTint="#EDB920" />
+            android:orientation="horizontal"
+            android:weightSum="2">
 
-        <Button
-            android:id="@+id/mindfulnessButton"
-            android:layout_width="match_parent"
-            android:layout_height="72dp"
-            android:text="@string/mindfulness"
-            app:backgroundTint="#657AED" />
+            <Button
+                android:id="@+id/playMusicButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/playmusic"
+                app:backgroundTint="#F4C63B" />
 
-        <Button
-            android:id="@+id/exercisesButton"
-            android:layout_width="match_parent"
-            android:layout_height="72dp"
-            android:text="@string/exercises"
-            app:backgroundTint="#EFBF2E" />
+            <TextView
+                android:id="@+id/MusicInfo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/musicDescription" />
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/moreResourcesButton"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="72dp"
-            android:text="@string/moreresources"
-            android:textColor="#FFFFFF"
-            app:backgroundTint="#3464C5" />
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/moodTrackerButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/moodtracker"
+                app:backgroundTint="#677CF4" />
+
+            <TextView
+                android:id="@+id/MoodTrackerInfo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/moodtrackerDescription" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/breathingExButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/breathingexercises"
+                app:backgroundTint="#F4C63B" />
+
+            <TextView
+                android:id="@+id/BreathingExercisesInfo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/breathingexercisesDescription" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/mindfulnessButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/mindfulness"
+                app:backgroundTint="#677CF4" />
+
+            <TextView
+                android:id="@+id/MindfulnessInfo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/mindfulnessDescription" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/exercisesButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/exercises"
+                app:backgroundTint="#F4C63B" />
+
+            <TextView
+                android:id="@+id/exercisesInfo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/exercisesDescription" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/moreResourcesButton"
+                android:layout_width="0dp"
+                android:layout_height="72dp"
+                android:layout_weight="1"
+                android:text="@string/moreresources"
+                app:backgroundTint="#677CF4" />
+
+            <TextView
+                android:id="@+id/moreresourceInfo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/moreresourcesDescription" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/favResources"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:background="#B5A51E"
+            android:background="#F4C63B"
             android:gravity="center"
             android:text="@string/favourites"
             android:textColor="@color/white"
@@ -102,51 +212,52 @@
             style="?android:attr/buttonBarStyle"
             android:layout_width="match_parent"
             android:layout_height="75dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="4">
 
             <Button
                 android:id="@+id/favourite1Button"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="80dp"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/favourites1"
                 android:textColor="#FAF7F7"
                 android:textSize="12sp"
-                app:backgroundTint="#4256C1" />
+                app:backgroundTint="#677CF4" />
 
             <Button
                 android:id="@+id/favourite2Button"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="80dp"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/favourites2"
                 android:textColor="#FAF6F6"
                 android:textSize="12sp"
-                app:backgroundTint="#CC9C0D" />
+                app:backgroundTint="#F4C63B" />
 
             <Button
                 android:id="@+id/favourite3Button"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="80dp"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/favourites3"
                 android:textColor="#FAF8F8"
                 android:textSize="12sp"
-                app:backgroundTint="#7285F1" />
+                app:backgroundTint="#677CF4" />
 
             <Button
                 android:id="@+id/editFavouritesButton"
                 style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="79dp"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/editFav"
                 android:textColor="#FAF8F8"
                 android:textSize="12sp"
-                app:backgroundTint="#EFBA1C" />
+                app:backgroundTint="#F4C63B" />
         </LinearLayout>
 
     </LinearLayout>

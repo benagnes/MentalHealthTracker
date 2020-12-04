@@ -321,7 +321,9 @@ public class MoodTracker extends AppCompatActivity {
         confirm_productivity.setOnClickListener( v -> {
             ProductivityWindow.dismiss();
             confirm_productivity.setVisibility(View.INVISIBLE);
-            openRecordMood();
+            if(addMood()) {
+                getMood();
+            }
         });
 
         Button unproductive = new Button(this);
@@ -369,12 +371,6 @@ public class MoodTracker extends AppCompatActivity {
         productivityLayout.addView(accomplished, productivity_params);
         productivityLayout.addView(confirm_productivity, productivity_params);
         ProductivityWindow.setContentView(productivityLayout);
-    }
-
-    public void openRecordMood() {
-        if(addMood()) {
-            getMood();
-        }
     }
 
     public boolean addMood() {
