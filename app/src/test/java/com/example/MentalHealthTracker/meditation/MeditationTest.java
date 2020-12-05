@@ -1,7 +1,7 @@
-package com.example.mentalhealthtracker.meditation;
+package com.example.MentalHealthTracker.meditation;
 
-import com.example.mentalhealthtracker.meditation.db.MeditationRoutine;
-import com.example.mentalhealthtracker.meditation.db.MeditationStep;
+import com.example.MentalHealthTracker.meditation.db.MeditationRoutine;
+import com.example.MentalHealthTracker.meditation.db.MeditationStep;
 
 import org.junit.Test;
 

@@ -1,7 +1,7 @@
-package com.example.mentalhealthtracker.mindfulness;
+package com.example.MentalHealthTracker.mindfulness;
 
-import com.example.mentalhealthtracker.mindfulness.db.MindfulnessActivity;
-import com.example.mentalhealthtracker.mindfulness.db.MindfulnessStep;
+import com.example.MentalHealthTracker.mindfulness.db.MindfulnessActivity;
+import com.example.MentalHealthTracker.mindfulness.db.MindfulnessStep;
 
 import org.junit.Test;
 
