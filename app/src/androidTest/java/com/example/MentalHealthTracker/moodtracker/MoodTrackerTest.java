@@ -40,7 +40,7 @@ public class MoodTrackerTest {
         // wipe database clean at start of test
         db.deleteAllHandler();
 
-        // check Load Handler returns nothing
+        // check Load Handler returns empty string
         allEntries = db.loadHandler();
         assert(allEntries.equals(""));
 
