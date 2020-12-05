@@ -1,4 +1,4 @@
-package com.example.MentalHealthTracker;
+package com.example.MentalHealthTracker.Statistics;
 
 import android.os.Bundle;
 import android.view.Gravity;
@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.MentalHealthTracker.R;
 import com.example.MentalHealthTracker.Statistics.StatisticsDBHandler;
 
 public class ViewStatistics extends AppCompatActivity {

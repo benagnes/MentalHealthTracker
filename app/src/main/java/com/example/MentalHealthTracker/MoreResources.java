@@ -7,6 +7,7 @@ import android.widget.Button;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.MentalHealthTracker.Statistics.ViewStatistics;
 import com.example.MentalHealthTracker.WebSupportArticles.WebSupportArticles;
 import com.example.MentalHealthTracker.Statistics.StatisticsDBHandler;
 import com.example.MentalHealthTracker.meditation.Meditation;

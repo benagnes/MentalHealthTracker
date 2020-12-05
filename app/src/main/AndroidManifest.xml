@@ -68,7 +68,7 @@
             android:name=".ConnectCounsellors"
             android:parentActivityName=".MoreResources" />
         <activity
-            android:name=".ViewStatistics"
+            android:name=".Statistics.ViewStatistics"
             android:parentActivityName=".MoreResources" />
     </application>
 

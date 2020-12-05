@@ -47,7 +47,8 @@ public class FavouriteDBHandler extends SQLiteOpenHelper {
         while (cursor.moveToNext()) {
             int FavNumresult = cursor.getInt(0);
             String ResourceResult = cursor.getString(1);
-            result.append(FavNumresult).append(": ").append(ResourceResult).append(System.getProperty("line.separator"));
+            result.append(FavNumresult).append(": ").append(ResourceResult)
+                    .append(System.getProperty("line.separator"));
         }
         cursor.close();
         db.close();
@@ -82,19 +83,6 @@ public class FavouriteDBHandler extends SQLiteOpenHelper {
         return favourite;
     }
 
-    public void deleteHandler(int FavouriteNumber) { // TO-DO: will this work??
-        String query = "SELECT * FROM " + table_name + " WHERE " + column_ID + "= '" + FavouriteNumber + "'";
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(query, null);
-        Favourite favourite = new Favourite();
-        if (cursor.moveToFirst()) {
-            cursor.moveToFirst();
-            favourite.setFavouriteNumber(cursor.getInt(0));
-            db.delete(table_name, column_ID + "=?", new String[] {String.valueOf(favourite.getFavouriteNumber())});
-            cursor.close();
-        }
-        db.close();
-    }
 
     public boolean updateHandler(int FavouriteNumber, String Resource) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -106,5 +94,26 @@ public class FavouriteDBHandler extends SQLiteOpenHelper {
         boolean result = (db.update(table_name, values,column_ID + "=" + FavouriteNumber, null) > 0);
         db.close();
         return result;
+    }
+
+    public void deleteHandler(int FavouriteNumber) {
+        String query = "SELECT * FROM " + table_name + " WHERE " + column_ID + "= '" + FavouriteNumber + "'";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        Favourite favourite = new Favourite();
+        if (cursor.moveToFirst()) {
+            cursor.moveToFirst();
+            favourite.setFavouriteNumber(cursor.getInt(0));
+            db.delete(table_name, column_ID + "=?",
+                    new String[] {String.valueOf(favourite.getFavouriteNumber())});
+            cursor.close();
+        }
+        db.close();
+    }
+
+    public void deleteAllHandler() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE from " + table_name);
+        db.close();
     }
 }

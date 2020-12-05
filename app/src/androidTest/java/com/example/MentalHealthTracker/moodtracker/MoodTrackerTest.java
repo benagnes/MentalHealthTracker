@@ -30,12 +30,10 @@ public class MoodTrackerTest {
     }
 
     @Test
-    public void writeUserAndReadInList() {
+    public void TestMoodTrackerDataBase() {
         String allEntries;
         int testID = 18022020;
         String testDate = "18022020";
-        Mood mood = new Mood(testID, testDate, "Happy", "High",
-                "Party!", "Productive" );
 
         // wipe database clean at start of test
         db.deleteAllHandler();
@@ -49,6 +47,8 @@ public class MoodTrackerTest {
         assert(testNull == null);
 
         // test adding and finding a mood
+        Mood mood = new Mood(testID, testDate, "Happy", "High",
+                "Party!", "Productive" );
         db.addHandler(mood);
         Mood testMood = db.findHandler(testDate);
         assert(testMood != null);
