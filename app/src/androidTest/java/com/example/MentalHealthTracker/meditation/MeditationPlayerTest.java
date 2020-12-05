@@ -1,4 +1,4 @@
-package com.example.mentalhealthtracker.meditation;
+package com.example.MentalHealthTracker.meditation;
 
 import android.content.Intent;
 
@@ -6,7 +6,7 @@ import androidx.test.core.app.ApplicationProvider;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
-import com.example.mentalhealthtracker.R;
+import com.example.MentalHealthTracker.R;
 
 import org.junit.Rule;
 import org.junit.Test;

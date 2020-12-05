@@ -1,10 +1,10 @@
-package com.example.mentalhealthtracker.mindfulness;
+package com.example.MentalHealthTracker.mindfulness;
 
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
-import com.example.mentalhealthtracker.R;
-import com.example.mentalhealthtracker.helpers.RecyclerViewItemCountAssertion;
+import com.example.MentalHealthTracker.R;
+import com.example.MentalHealthTracker.helpers.RecyclerViewItemCountAssertion;
 
 import org.junit.Rule;
 import org.junit.Test;

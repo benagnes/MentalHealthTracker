@@ -1,4 +1,4 @@
-package com.example.mentalhealthtracker.mindfulness;
+package com.example.MentalHealthTracker.mindfulness;
 
 import android.content.Intent;
 
@@ -10,7 +10,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import com.example.mentalhealthtracker.R;
+import com.example.MentalHealthTracker.R;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
