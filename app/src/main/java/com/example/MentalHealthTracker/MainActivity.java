@@ -20,6 +20,7 @@ import com.example.MentalHealthTracker.FavouriteResources.Favourite;
 import com.example.MentalHealthTracker.FavouriteResources.FavouriteDBHandler;
 import com.example.MentalHealthTracker.FavouriteResources.ResourceToString;
 import com.example.MentalHealthTracker.FavouriteResources.Resources;
+import com.example.MentalHealthTracker.Statistics.ViewStatistics;
 import com.example.MentalHealthTracker.WebSupportArticles.WebSupportArticles;
 import com.example.MentalHealthTracker.Statistics.Statistics;
 import com.example.MentalHealthTracker.Statistics.StatisticsDBHandler;
