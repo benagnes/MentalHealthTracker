@@ -18,6 +18,7 @@ import java.util.Locale;
 public class Exercises extends AppCompatActivity {
     // attributes
     private static final String appBarTitle = "Exercises";
+    public static final String ACTIVITY_REF = "EXERCISES_ACTIVITY";
 
     TextView exerciseTextView;
     TextView exerciseNameTextView;
@@ -40,40 +41,22 @@ public class Exercises extends AppCompatActivity {
             R.mipmap.buttkicks3, R.mipmap.highknees3, R.mipmap.situps, R.mipmap.plank,
             R.mipmap.burpee, R.mipmap.sidelunge3, R.mipmap.round21, R.mipmap.jumpingjacks2, R.mipmap.lunge2,
             R.mipmap.squat3, R.mipmap.pushups3, R.mipmap.buttkicks3, R.mipmap.highknees3,
-            R.mipmap.situps, R.mipmap.plank, R.mipmap.burpee, R.mipmap.sidelunge3, R.mipmap.sidelunge3};
+            R.mipmap.situps, R.mipmap.plank, R.mipmap.burpee, R.mipmap.sidelunge3};
 
     int numExercisePoses = exerciseImageIds.length;
-    String[] exerciseNames = {"Jumping Jacks", "Lunges", "Squats", "Push Ups",
-            "Butt Kickers", "High Knee Running", "Sit Ups", "Plank", "Burpees",
-            "Side Lunges", " ", "Jumping Jacks", "Lunges", "Squats", "Push Ups",
-            "Butt Kickers", "High Knee Running", "Sit Ups", "Plank", "Burpees",
-            "Side Lunges", "Side Lunges"};
+    String[] exerciseNames;
 
     // methods
     public void resetTimer() {
         countdownExerciseTimerTextView4.setText(R.string.exerciseInitialTimer);
-        exerciseGoButton.setText(R.string.exerciseBeginText);
         exerciseCounterIsActive = false;
         exerciseCounter++;
 
-        if (exerciseCounter < numExercisePoses) {
+        if (exerciseCounter <= numExercisePoses) {
             countDownExerciseTimer.start();
         }
         else {
-            countDownExerciseTimer.cancel();
-            mSkipNextButton.setVisibility(View.INVISIBLE);
-            exerciseNameTextView.setText(R.string.exerciseCompletionMessage);
-            exerciseImageView.setVisibility(View.INVISIBLE);
-            countdownExerciseTimerTextView4.setVisibility(View.INVISIBLE);
-            exerciseGoButton.setVisibility(View.VISIBLE);
-
-            // Reset the counter when we're at the end
-            exerciseCounter = 0;
-
-            if (mediaPlayer1 != null) {
-                mediaPlayer1.reset();
-                mediaPlayer1.release();
-            }
+            exercisesComplete();
         }
     }
 
@@ -101,9 +84,14 @@ public class Exercises extends AppCompatActivity {
             public void onFinish() {
                 MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.beep);
                 mediaPlayer.start();
-                exerciseImageView.setImageResource(exerciseImageIds[exerciseCounter]);
-                exerciseNameTextView.setText(exerciseNames[exerciseCounter]);
-                resetTimer();
+                if (exerciseCounter < numExercisePoses) {
+                    exerciseImageView.setImageResource(exerciseImageIds[exerciseCounter]);
+                    exerciseNameTextView.setText(exerciseNames[exerciseCounter]);
+                    resetTimer();
+                }
+                else {
+                    exercisesComplete();
+                }
             }
         }.start();
     }
@@ -126,7 +114,6 @@ public class Exercises extends AppCompatActivity {
             }
             @Override
             public void onFinish() {
-                //initialCountdownTimerTextView.setText("Finished");
                 mediaPlayer1 = MediaPlayer.create(getApplicationContext(), R.raw.beep);
                 mediaPlayer1.start();
                 getReadyTextView.setVisibility(View.INVISIBLE);
@@ -151,6 +138,23 @@ public class Exercises extends AppCompatActivity {
                 secondString));
     }
 
+    public void exercisesComplete() {
+        countDownExerciseTimer.cancel();
+        mSkipNextButton.setVisibility(View.INVISIBLE);
+        exerciseNameTextView.setText(R.string.exerciseCompletionMessage);
+        exerciseImageView.setVisibility(View.INVISIBLE);
+        countdownExerciseTimerTextView4.setVisibility(View.INVISIBLE);
+        exerciseGoButton.setVisibility(View.VISIBLE);
+
+        // Reset the counter when we're at the end
+        exerciseCounter = 0;
+
+        if (mediaPlayer1 != null) {
+            mediaPlayer1.reset();
+            mediaPlayer1.release();
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -168,14 +172,42 @@ public class Exercises extends AppCompatActivity {
 
         exerciseGoButton.setOnClickListener(v -> exerciseButtonClicked());
 
+        exerciseNames = new String[numExercisePoses];
+        exerciseNames[0] = getResources().getString(R.string.jumpingjacks);
+        exerciseNames[1] = getResources().getString(R.string.lunges);
+        exerciseNames[2] = getResources().getString(R.string.squats);
+        exerciseNames[3] = getResources().getString(R.string.pushups);
+        exerciseNames[4] = getResources().getString(R.string.buttkickers);
+        exerciseNames[5] = getResources().getString(R.string.highknees);
+        exerciseNames[6] = getResources().getString(R.string.situps);
+        exerciseNames[7] = getResources().getString(R.string.plank);
+        exerciseNames[8] = getResources().getString(R.string.burpee);
+        exerciseNames[9] = getResources().getString(R.string.sidelunges);
+        exerciseNames[10] = "";
+        exerciseNames[11] = getResources().getString(R.string.jumpingjacks);
+        exerciseNames[12] = getResources().getString(R.string.lunges);
+        exerciseNames[13] = getResources().getString(R.string.squats);
+        exerciseNames[14] = getResources().getString(R.string.pushups);
+        exerciseNames[15] = getResources().getString(R.string.buttkickers);
+        exerciseNames[16] = getResources().getString(R.string.highknees);
+        exerciseNames[17] = getResources().getString(R.string.situps);
+        exerciseNames[18] = getResources().getString(R.string.plank);
+        exerciseNames[19] = getResources().getString(R.string.burpee);
+        exerciseNames[20] = getResources().getString(R.string.sidelunges);
+
         mSkipNextButton.setVisibility(View.INVISIBLE);
         mSkipNextButton.setOnClickListener(v -> {
             countDownExerciseTimer.cancel();
             MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.beep);
             mediaPlayer.start();
-            exerciseImageView.setImageResource(exerciseImageIds[exerciseCounter]);
-            exerciseNameTextView.setText(exerciseNames[exerciseCounter]);
-            resetTimer();
+            if (exerciseCounter < numExercisePoses) {
+                exerciseImageView.setImageResource(exerciseImageIds[exerciseCounter]);
+                exerciseNameTextView.setText(exerciseNames[exerciseCounter]);
+                resetTimer();
+            }
+            else {
+                exercisesComplete();
+            }
         });
 
         ActionBar mainActionBar = getSupportActionBar();

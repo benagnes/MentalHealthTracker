@@ -1,8 +1,6 @@
-
 package com.example.MentalHealthTracker;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -12,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class BreathingExercises extends AppCompatActivity {
     // attributes
+    public static final String ACTIVITY_REF = "BREATHING_EXERCISES_ACTIVITY";
     private static final String appBarTitle = "Breathing Exercises";
 
     TextView breathingStateTextView;
@@ -24,13 +23,22 @@ public class BreathingExercises extends AppCompatActivity {
             R.mipmap.storm3, R.mipmap.tensemuscle3, R.mipmap.musclerelax3, R.mipmap.sunset,
             R.mipmap.storm3, R.mipmap.peace3};
     int numSteps = imageIds.length;
-    String[] stepsIds = {"Breath Focus", "Breathe in...", "Breathe out...", "Breathe in...", "Breathe out...",
-            "Breathe in...", "Breathe out...", "Breathe in...", "Breathe out...", "Relaxed?"};
-    String[] instructionIds = {"Get into a comfortable position", "Imagine the air is filled with a sense of peace and calm",
-            "Imagine the air leaves with your stress and tension", "Notice your abdomen expanding with deep inhalations",
-            "Bring awareness to your breath", "Tense your muscles", "Relax your muscles, letting go of all tension",
-            "Imagine peace and tranquility", "Let go of stress and anxiety",
-            "Hope you feel relaxed and rejuvenated"};
+    private String[] stepsIds;
+    private String[] instructionIds;
+
+    public void runBreathingRoutine() {
+        breathingImages.setImageResource(imageIds[counter]);
+        breathingStateTextView.setText(stepsIds[counter]);
+        breathingInfoTextView.setText(instructionIds[counter]);
+        if(counter == 0) {
+            nextButton.setText(R.string.nextBreathing);
+        }
+        counter++;
+        if (counter == numSteps) {
+            nextButton.setText(R.string.startBreathing);
+            counter = 0;
+        }
+    }
 
     // methods
     @Override
@@ -38,22 +46,39 @@ public class BreathingExercises extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_breathing_exercises);
 
+        // Initialize step titles
+        stepsIds = new String[10];
+        stepsIds[0] = getResources().getString(R.string.breathfocus);
+        stepsIds[1] = getResources().getString(R.string.breathin);
+        stepsIds[2] = getResources().getString(R.string.breathout);
+        stepsIds[3] = getResources().getString(R.string.breathin);
+        stepsIds[4] = getResources().getString(R.string.breathout);
+        stepsIds[5] = getResources().getString(R.string.breathin);
+        stepsIds[6] = getResources().getString(R.string.breathout);
+        stepsIds[7] = getResources().getString(R.string.breathin);
+        stepsIds[8] = getResources().getString(R.string.breathout);
+        stepsIds[9] = getResources().getString(R.string.breathingexercisesComplete);
+
+        // Initialize step instruction
+        instructionIds = new String[10];
+        instructionIds[0] = getResources().getString(R.string.comfortableposition);
+        instructionIds[1] = getResources().getString(R.string.imaginepeacecalm);
+        instructionIds[2] = getResources().getString(R.string.leavestresstension);
+        instructionIds[3] = getResources().getString(R.string.abdomenexpanding);
+        instructionIds[4] = getResources().getString(R.string.awareofbreath);
+        instructionIds[5] = getResources().getString(R.string.tightenmuscles);
+        instructionIds[6] = getResources().getString(R.string.relaxmuscles);
+        instructionIds[7] = getResources().getString(R.string.peacetranequility);
+        instructionIds[8] = getResources().getString(R.string.letgoOfstressanxiety);
+        instructionIds[9] = getResources().getString(R.string.feelrelaxedrejuvinated);
+
         breathingStateTextView = findViewById(R.id.breatheStateTextView);
         breathingImages = (ImageView) findViewById(R.id.breathingImageView);
         breathingInfoTextView = findViewById(R.id.breathingInstructionTextView);
 
         nextButton = findViewById(R.id.nextButton);
-        nextButton.setText(R.string.next);
-        nextButton.setOnClickListener(v -> {
-            breathingImages.setImageResource(imageIds[counter]);
-            breathingStateTextView.setText(stepsIds[counter]);
-            breathingInfoTextView.setText(instructionIds[counter]);
-            counter++;
-            if (counter == numSteps) {
-                nextButton.setVisibility(View.INVISIBLE);
-                counter = 0;
-            }
-        });
+        nextButton.setText(R.string.startBreathing);
+        nextButton.setOnClickListener(v -> runBreathingRoutine());
 
         ActionBar mainActionBar = getSupportActionBar();
         if (mainActionBar != null) {

@@ -1,8 +1,11 @@
-package com.example.MentalHealthTracker;
+package com.example.MentalHealthTracker.yoga;
 
 import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
+
+import com.example.MentalHealthTracker.R;
+import com.example.MentalHealthTracker.Yoga;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -27,7 +30,7 @@ public class YogaTest {
         Thread.sleep(2000);
 
         // Make sure the start button is visible
-        onView(withId(R.id.startButton)).check(matches(isDisplayed()));
+        onView(ViewMatchers.withId(R.id.startButton)).check(matches(isDisplayed()));
 
         // Make sure the following items are not displayed
         onView(withId(R.id.countdownTextView)).check(matches(withText("")));

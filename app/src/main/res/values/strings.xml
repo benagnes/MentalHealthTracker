@@ -2,6 +2,11 @@
     <string name="app_name">MentalHealthTracker</string>
     <string name="action_settings">Settings</string>
 
+    <!-- Welcome messages -->
+    <string name="welcomeMessage_1">Good morning!</string>
+    <string name="welcomeMessage_2">Good afternoon!</string>
+    <string name="welcomeMessage_3">Good evening!</string>
+
     <!-- Strings for Main and More Resource panels -->
     <string name="getStarted">Lets Get Started</string>
     <string name="yoga">Yoga</string>
@@ -40,6 +45,17 @@
     <string name="cancelSelection">Cancel Selection</string>
     <string name="confirmSelection">Confirm Selection</string>
 
+    <!-- Strings for Yoga Component -->
+    <string name="yogaPageTitle">YOGA</string>
+    <string name="yogaCompletionMessage">GREAT JOB!</string>
+    <string name="yogaBeginText">START</string>
+    <string name="yogaInitialTimer">0:45</string>
+    <string name="yogaStartButtonText">Start</string>
+    <string name="yogaHeaderText">YOGA</string>
+    <string name="yogaGetReadyText">Get Ready!</string>
+    <string name="yogaImageContentDescription">Yoga Image Content Description</string>
+    <string name="yogaRestartButtonText">Restart</string>
+
     <!-- Strings used in the PlayMusic activity -->
     <string name="currentlyPlayingThumbnail">currentlyPlayingThumbnail</string>
     <string name="currentlyPlayingTitle">Song Title</string>
@@ -61,31 +77,24 @@
     <string name="full_player_close_button">Full Player Close Button</string>
     <string name="songThumbnail">Song Thumbnail</string>
 
-    <!-- Strings for Yoga Component -->
-    <string name="yogaPageTitle">YOGA</string>
-    <string name="yogaCompletionMessage">GREAT JOB!</string>
-    <string name="yogaBeginText">START</string>
-    <string name="yogaInitialTimer">0:45</string>
-    <string name="yogaStartButtonText">Start</string>
-    <string name="yogaHeaderText">YOGA</string>
-    <string name="yogaGetReadyText">Get Ready!</string>
-    <string name="yogaImageContentDescription">Yoga Image Content Description</string>
-    <string name="yogaRestartButtonText">Restart</string>
-
     <!-- Strings for Exercise Component -->
     <string name="exercisePageTitle">EXERCISE</string>
-    <string name="exerciseHeaderText">EXERCISE</string>
     <string name="exerciseStartButtonText">Start</string>
     <string name="exerciseInitialTimer">0:30</string>
     <string name="exerciseImageContentDescription">Exercise Image Content Description</string>
-    <string name="exerciseBeginText">START</string>
-    <string name="exerciseCompletionMessage">GREAT JOB!</string>
+    <string name="exerciseCompletionMessage">Great Work!</string>
     <string name="getReady">"Get Ready!"</string>
 
-    <!-- Welcome messages -->
-    <string name="welcomeMessage_1">Good morning!</string>
-    <string name="welcomeMessage_2">Good afternoon!</string>
-    <string name="welcomeMessage_3">Good evening!</string>
+    <string name="jumpingjacks">Jumping Jacks</string>
+    <string name="lunges">Lunges</string>
+    <string name="squats">Squats</string>
+    <string name="pushups">Push Ups</string>
+    <string name="buttkickers">Butt Kickers</string>
+    <string name="highknees">High Knees</string>
+    <string name="situps">Sit Ups</string>
+    <string name="plank">Plank</string>
+    <string name="burpee">Burpees</string>
+    <string name="sidelunges">Side Lunges</string>
 
     <!-- Strings for Mindfulness component -->
     <string name="mindfulness_activity_title">Mindfulness Activity Title</string>
@@ -101,9 +110,26 @@
     <string name="webSupportArticleContentDescription">Web Support Article Content Description</string>
 
     <!-- Strings for Breathing Exercises component  -->
-    <string name="breathingExerciseCheckboxTitle">CheckBox</string>
-    <string name="next">Next</string>
-    <string name="focusedBreathing">Focused Breathing</string>
+    <string name="BreathingExercisesStart">Welcome to Breathing Exercises</string>
+    <string name="nextBreathing">Next</string>
+    <string name="startBreathing">Start</string>
+
+    <string name="breathfocus">Focus on your Breathing</string>
+    <string name="breathin">Breathe in…</string>
+    <string name="breathout">Breathe out…</string>
+    <string name="breathingexercisesComplete">Complete!</string>
+
+    <string name="comfortableposition">Get into a comfortable position</string>
+    <string name="imaginepeacecalm">Imagine the air is filled with a sense of peace and calm</string>
+    <string name="leavestresstension">Imagine the air leaves with your stress and tension</string>
+    <string name="abdomenexpanding">Notice your abdomen expanding with deep inhalations</string>
+    <string name="awareofbreath">Bring awareness to your breathing</string>
+    <string name="tightenmuscles">Tighten your muscles</string>
+    <string name="relaxmuscles">Relax your muscles, let go of all tension</string>
+    <string name="peacetranequility">Imagine peace and tranquility</string>
+    <string name="letgoOfstressanxiety">Let go of stress and anxiety</string>
+    <string name="feelrelaxedrejuvinated">"Hope you feel relaxed and rejuvenated"</string>
+
 
     <!-- Strings for Mood Tracker Component  -->
     <string name="welcomeToMoodTracker">Welcome to Mood Tracker</string>

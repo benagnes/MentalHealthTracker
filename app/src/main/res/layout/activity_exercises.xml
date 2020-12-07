@@ -12,7 +12,7 @@
         android:layout_marginTop="2dp"
         android:layout_marginBottom="577dp"
         android:fontFamily="sans-serif-black"
-        android:text="@string/exerciseHeaderText"
+        android:text="@string/exercisePageTitle"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="#FB0303"
         android:textStyle="bold"
