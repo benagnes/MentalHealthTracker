@@ -60,6 +60,7 @@ public class MindfulnessStepViewModel extends AndroidViewModel {
 
     public enum InteractiveActivityState {
         NOT_STARTED,
+        PAUSED,
         STARTED
     }
 }

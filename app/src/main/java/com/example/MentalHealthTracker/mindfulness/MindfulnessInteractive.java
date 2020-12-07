@@ -169,13 +169,18 @@ public class MindfulnessInteractive extends AppCompatActivity {
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
+    protected void onResume() {
+        if (viewModel.getState() == MindfulnessStepViewModel.InteractiveActivityState.PAUSED) {
+            moveToStep(viewModel.getCurrentStep(), false);
+            viewModel.setState(MindfulnessStepViewModel.InteractiveActivityState.STARTED);
+        }
+        super.onResume();
     }
 
     @Override
     protected void onStop() {
-        super.onStop();
+        viewModel.setState(MindfulnessStepViewModel.InteractiveActivityState.PAUSED);
         stopStepTimer();
+        super.onStop();
     }
 }
