@@ -1,4 +1,4 @@
-package com.example.MentalHealthTracker;
+package com.example.MentalHealthTracker.MoodTracker;
 
 import com.example.MentalHealthTracker.mood_tracker.Mood;
 

@@ -1,4 +1,4 @@
-package com.example.MentalHealthTracker;
+package com.example.MentalHealthTracker.mainactivity;
 
 import android.content.Intent;
 import android.os.Build;
@@ -20,15 +20,20 @@ import com.example.MentalHealthTracker.FavouriteResources.Favourite;
 import com.example.MentalHealthTracker.FavouriteResources.FavouriteDBHandler;
 import com.example.MentalHealthTracker.FavouriteResources.ResourceToString;
 import com.example.MentalHealthTracker.FavouriteResources.Resources;
+import com.example.MentalHealthTracker.moreresources.MoreResources;
+import com.example.MentalHealthTracker.R;
 import com.example.MentalHealthTracker.Statistics.ViewStatistics;
 import com.example.MentalHealthTracker.WebSupportArticles.WebSupportArticles;
 import com.example.MentalHealthTracker.Statistics.Statistics;
 import com.example.MentalHealthTracker.Statistics.StatisticsDBHandler;
+import com.example.MentalHealthTracker.breathingexercises.BreathingExercises;
 import com.example.MentalHealthTracker.connectwithcounsellors.ConnectWithCounsellors;
+import com.example.MentalHealthTracker.exercises.Exercises;
 import com.example.MentalHealthTracker.meditation.Meditation;
 import com.example.MentalHealthTracker.mindfulness.Mindfulness;
 import com.example.MentalHealthTracker.mood_tracker.MoodTracker;
 import com.example.MentalHealthTracker.music.PlayMusic;
+import com.example.MentalHealthTracker.yoga.Yoga;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
