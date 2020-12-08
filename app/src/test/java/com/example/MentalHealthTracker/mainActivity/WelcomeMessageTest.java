@@ -1,4 +1,4 @@
-package com.example.MentalHealthTracker;
+package com.example.MentalHealthTracker.mainActivity;
 
 import org.junit.Test;
 import static org.junit.Assert.*;

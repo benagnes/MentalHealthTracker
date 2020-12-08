@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MentalHealthTracker">
         <activity
-            android:name=".MainActivity"
+            android:name=".mainactivity.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.MentalHealthTracker.NoActionBar">
             <intent-filter>
@@ -22,33 +22,33 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Yoga"
-            android:parentActivityName=".MainActivity" />
+            android:name=".yoga.Yoga"
+            android:parentActivityName=".mainactivity.MainActivity" />
         <activity
             android:name=".music.PlayMusic"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".mainactivity.MainActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".mood_tracker.MoodTracker"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".mainactivity.MainActivity" />
         <activity
-            android:name=".BreathingExercises"
-            android:parentActivityName=".MainActivity" />
+            android:name=".breathingexercises.BreathingExercises"
+            android:parentActivityName=".mainactivity.MainActivity" />
         <activity
             android:name=".mindfulness.Mindfulness"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".mainactivity.MainActivity" />
         <activity
             android:name=".mindfulness.MindfulnessInteractive"
             android:parentActivityName=".mindfulness.Mindfulness" />
         <activity
-            android:name=".Exercises"
-            android:parentActivityName=".MainActivity" />
+            android:name=".exercises.Exercises"
+            android:parentActivityName=".mainactivity.MainActivity" />
         <activity
-            android:name=".MoreResources"
-            android:parentActivityName=".MainActivity" />
+            android:name=".moreresources.MoreResources"
+            android:parentActivityName=".mainactivity.MainActivity" />
         <activity
             android:name=".WebSupportArticles.WebSupportArticles"
-            android:parentActivityName=".MoreResources" />
+            android:parentActivityName=".moreresources.MoreResources" />
         <activity
             android:name=".WebSupportArticles.WebSupportArticleView"
             android:parentActivityName=".WebSupportArticles.WebSupportArticles"
@@ -60,16 +60,16 @@
             />
         <activity
             android:name=".meditation.Meditation"
-            android:parentActivityName=".MoreResources" />
+            android:parentActivityName=".moreresources.MoreResources" />
         <activity
             android:name=".meditation.MeditationPlayer"
             android:parentActivityName=".meditation.Meditation" />
         <activity
             android:name=".connectwithcounsellors.ConnectWithCounsellors"
-            android:parentActivityName=".MoreResources" />
+            android:parentActivityName=".moreresources.MoreResources" />
         <activity
             android:name=".Statistics.ViewStatistics"
-            android:parentActivityName=".MoreResources" />
+            android:parentActivityName=".moreresources.MoreResources" />
     </application>
 
 </manifest>

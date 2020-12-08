@@ -1,4 +1,4 @@
-package com.example.MentalHealthTracker;
+package com.example.MentalHealthTracker.favourites;
 
 import com.example.MentalHealthTracker.FavouriteResources.Favourite;
 

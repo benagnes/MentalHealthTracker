@@ -1,4 +1,4 @@
-package com.example.MentalHealthTracker;
+package com.example.MentalHealthTracker.moreresources;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.widget.Button;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.MentalHealthTracker.R;
 import com.example.MentalHealthTracker.Statistics.ViewStatistics;
 import com.example.MentalHealthTracker.WebSupportArticles.WebSupportArticles;
 import com.example.MentalHealthTracker.Statistics.StatisticsDBHandler;

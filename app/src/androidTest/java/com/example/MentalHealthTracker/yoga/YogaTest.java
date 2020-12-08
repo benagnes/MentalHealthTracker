@@ -5,7 +5,6 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import com.example.MentalHealthTracker.R;
-import com.example.MentalHealthTracker.Yoga;
 
 import org.junit.Rule;
 import org.junit.Test;

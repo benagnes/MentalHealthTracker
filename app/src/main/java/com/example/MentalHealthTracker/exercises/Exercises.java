@@ -1,4 +1,4 @@
-package com.example.MentalHealthTracker;
+package com.example.MentalHealthTracker.exercises;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.MentalHealthTracker.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.Locale;

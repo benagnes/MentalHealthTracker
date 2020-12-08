@@ -1,4 +1,4 @@
-package com.example.MentalHealthTracker;
+package com.example.MentalHealthTracker.statistics;
 
 import com.example.MentalHealthTracker.Statistics.Statistics;
 

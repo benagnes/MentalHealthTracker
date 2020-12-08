@@ -1,4 +1,4 @@
-package com.example.MentalHealthTracker;
+package com.example.MentalHealthTracker.MediaTests;
 
 import com.example.MentalHealthTracker.timing.MediaTimestamp;
 
