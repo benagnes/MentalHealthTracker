@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.MentalHealthTracker.Statistics.ViewStatistics;
 import com.example.MentalHealthTracker.WebSupportArticles.WebSupportArticles;
 import com.example.MentalHealthTracker.Statistics.StatisticsDBHandler;
+import com.example.MentalHealthTracker.connectwithcounsellors.ConnectWithCounsellors;
 import com.example.MentalHealthTracker.meditation.Meditation;
 
 public class MoreResources extends AppCompatActivity {
@@ -62,7 +63,7 @@ public class MoreResources extends AppCompatActivity {
 
     public void openConnectCounsellors() {
         statisticsDBHandler.updateHandler(R.string.counsellors);
-        Intent intent = new Intent(this, ConnectCounsellors.class);
+        Intent intent = new Intent(this, ConnectWithCounsellors.class);
         startActivity(intent);
     }
 

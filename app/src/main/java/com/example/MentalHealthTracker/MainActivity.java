@@ -24,6 +24,7 @@ import com.example.MentalHealthTracker.Statistics.ViewStatistics;
 import com.example.MentalHealthTracker.WebSupportArticles.WebSupportArticles;
 import com.example.MentalHealthTracker.Statistics.Statistics;
 import com.example.MentalHealthTracker.Statistics.StatisticsDBHandler;
+import com.example.MentalHealthTracker.connectwithcounsellors.ConnectWithCounsellors;
 import com.example.MentalHealthTracker.meditation.Meditation;
 import com.example.MentalHealthTracker.mindfulness.Mindfulness;
 import com.example.MentalHealthTracker.mood_tracker.MoodTracker;
@@ -445,7 +446,7 @@ public class MainActivity extends AppCompatActivity {
             return Meditation.class;
         }
         else if (resource.equals(Resources.ConnectCounsellors.toString())) {
-            return ConnectCounsellors.class;
+            return ConnectWithCounsellors.class;
         }
         else if (resource.equals(Resources.ViewStatistics.toString())) {
             return ViewStatistics.class;

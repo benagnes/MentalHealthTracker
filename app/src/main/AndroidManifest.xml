@@ -65,7 +65,7 @@
             android:name=".meditation.MeditationPlayer"
             android:parentActivityName=".meditation.Meditation" />
         <activity
-            android:name=".ConnectCounsellors"
+            android:name=".connectwithcounsellors.ConnectWithCounsellors"
             android:parentActivityName=".MoreResources" />
         <activity
             android:name=".Statistics.ViewStatistics"
