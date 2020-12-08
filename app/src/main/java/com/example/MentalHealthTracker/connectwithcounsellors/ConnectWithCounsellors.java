@@ -1,4 +1,4 @@
-package com.example.MentalHealthTracker;
+package com.example.MentalHealthTracker.connectwithcounsellors;
 
 import android.os.Bundle;
 import android.view.View;
@@ -8,9 +8,12 @@ import android.widget.TextView;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ConnectCounsellors extends AppCompatActivity {
+import com.example.MentalHealthTracker.R;
+
+public class ConnectWithCounsellors extends AppCompatActivity {
     // attributes
     private static final String appBarTitle = "Connect with Counsellors";
+    public static final String ACTIVITY_REF = "CONNECT_WITH_COUNSELLORS_ACTIVITY";
 
     TextView connectCounsellorsInfo;
     Button CMHAButton;
@@ -87,7 +90,7 @@ public class ConnectCounsellors extends AppCompatActivity {
             backButton.setVisibility(View.VISIBLE);
             connectCounsellorsInfo.setText(R.string.youthspace);
             resourceInfo.setVisibility(View.VISIBLE);
-            resourceInfo.setText(R.string.youthspaeResourceInfo);
+            resourceInfo.setText(R.string.youthspaceResourceInfo);
         });
 
 
