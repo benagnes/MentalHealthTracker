@@ -15,6 +15,7 @@ import com.example.MentalHealthTracker.Statistics.StatisticsDBHandler;
 
 public class ViewStatistics extends AppCompatActivity {
     // attributes
+    public static final String ACTIVITY_REF = "STATISTICS_ACTIVITY";
     private static final String appBarTitle = "View Statistics";
 
     private StatisticsDBHandler statisticsDBHandler;

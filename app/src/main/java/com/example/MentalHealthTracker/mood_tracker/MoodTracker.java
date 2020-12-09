@@ -17,6 +17,7 @@ import com.example.MentalHealthTracker.R;
 
 public class MoodTracker extends AppCompatActivity {
     // attributes
+    public static final String ACTIVITY_REF = "MOOD_TRACKER_ACTIVITY";
     private static final String appBarTitle = "Mood Tracker";
 
     // Mood Database handler

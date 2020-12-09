@@ -40,6 +40,8 @@ import java.time.format.DateTimeFormatter;
 
 public class MainActivity extends AppCompatActivity {
     // attributes
+    public static final String ACTIVITY_REF = "MAIN_ACTIVITY";
+
     private TextView welcomeMsg;
 
     // Favourite resource buttons and database support
