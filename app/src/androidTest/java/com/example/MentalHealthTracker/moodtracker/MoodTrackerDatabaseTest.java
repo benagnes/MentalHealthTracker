@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
 
 // Tests Mood Tracker database handler functions
 @RunWith(AndroidJUnit4.class)
-public class MoodTrackerTest {
+public class MoodTrackerDatabaseTest {
     private MoodDBhandler db;
 
     @Before
